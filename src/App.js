@@ -9,7 +9,7 @@ function App() {
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
   return (
     <ThemeProvider theme={themeMode}>
-      {/* <ToggleThemeMod theme={theme} toggleTheme={toggleTheme} /> */}
+      <ToggleThemeMod theme={theme} toggleTheme={toggleTheme} />
       <Layout>
         <GlobalStyles />
         <p>
