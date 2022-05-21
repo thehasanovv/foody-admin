@@ -16,18 +16,16 @@ export const GlobalStyles = createGlobalStyle`
         outline:none;
         border:none;
     }
-        /* width */
+    
     ::-webkit-scrollbar {
     width: 5px;
     }
-    /* Handle */
+
     ::-webkit-scrollbar-thumb {
     background: #C74FEB;
     border-radius: 10px;
-
     }
 
-    /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
     background: #ce68ed;
     }
