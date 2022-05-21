@@ -41,6 +41,10 @@ export const lightTheme = {
   bgSidebar: '#C74FEB',
   bgSidebarHover: '#ce68ed',
   cSidebarText: '#FCDDEC',
+  //primary button properties
+  bgPrimaryButton: '#c035a2',
+  bgPrimaryButtonHover: '#c74feb',
+  cPrimaryButton: '#000',
 };
 
 export const darkTheme = {
@@ -52,4 +56,8 @@ export const darkTheme = {
   bgSidebar: '#C74FEB',
   bgSidebarHover: '#ce68ed',
   cSidebarText: '#FCDDEC',
+  //primary button properties
+  bgPrimaryButton: '#c035a2',
+  bgPrimaryButtonHover: '#c74feb',
+  cPrimaryButton: '#fff',
 };
