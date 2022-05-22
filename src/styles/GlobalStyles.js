@@ -45,6 +45,10 @@ export const lightTheme = {
   bgPrimaryButton: '#c035a2',
   bgPrimaryButtonHover: '#c74feb',
   cPrimaryButton: '#000',
+  //sidebar Icons text color
+  cSidebarText: '#fff',
+  bgSidebar: '#1e1e30',
+  bgSidebarHover: '#27283c',
 };
 
 export const darkTheme = {
@@ -60,4 +64,8 @@ export const darkTheme = {
   bgPrimaryButton: '#c035a2',
   bgPrimaryButtonHover: '#c74feb',
   cPrimaryButton: '#fff',
+  //sidebar Icons text color
+  cSidebarText: '#fff',
+  bgSidebar: '#c74feb',
+  bgSidebarHover:"#ce68ed",
 };
