@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
     body{
@@ -24,22 +24,21 @@ export const GlobalStyles = createGlobalStyle`
 
     ::-webkit-scrollbar-thumb {
     background: #C74FEB;
-    border-radius: 10px;
+    border-radius: 5px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
     background: #ce68ed;
     }
-    
-`;
 
+`;
 export const lightTheme = {
-  body: "#fff",
-  text: "#121212",
-  primary: "#6200ee",
-  bgSidebar: "#C74FEB",
-  bgSidebarHover: "#ce68ed",
-  cSidebarText: "#FCDDEC",
+  body: '#fff',
+  text: '#121212',
+  primary: '#6200ee',
+  bgSidebar: '#C74FEB',
+  bgSidebarHover: '#ce68ed',
+  cSidebarText: '#FCDDEC',
   //primary button properties
   bgPrimaryButton: '#c035a2',
   bgPrimaryButtonHover: '#c74feb',
@@ -48,17 +47,20 @@ export const lightTheme = {
   cSidebarText: '#fff',
   bgSidebar: '#1e1e30',
   bgSidebarHover: '#27283c',
+  // table colors
+  bgTable: '#000',
+  cTableText: '#fff',
 };
 
 export const darkTheme = {
-  body: "#1e1e30",
-  text: "#C7C7C7",
-  secondaryText: "#8E8E93",
-  primary: "#27283C",
-  secondary: "",
-  bgSidebar: "#C74FEB",
-  bgSidebarHover: "#ce68ed",
-  cSidebarText: "#FCDDEC",
+  body: '#1e1e30',
+  text: '#C7C7C7',
+  secondaryText: '#8E8E93',
+  primary: '#27283C',
+  secondary: '',
+  bgSidebar: '#C74FEB',
+  bgSidebarHover: '#ce68ed',
+  cSidebarText: '#FCDDEC',
   //primary button properties
   bgPrimaryButton: '#c035a2',
   bgPrimaryButtonHover: '#c74feb',
@@ -66,5 +68,8 @@ export const darkTheme = {
   //sidebar Icons text color
   cSidebarText: '#fff',
   bgSidebar: '#c74feb',
-  bgSidebarHover:"#ce68ed",
+  bgSidebarHover: '#ce68ed',
+  // table colors
+  bgTable: '#fff',
+  cTableText: 'black',
 };

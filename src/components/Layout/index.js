@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
           <Header />
         </Col>
       </Row>
-      <Row>
+      <Row style={{marginTop:'2rem'}}>
         <Col md={3}>
           <Sidebar />
         </Col>
