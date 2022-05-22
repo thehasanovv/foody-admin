@@ -4,7 +4,7 @@ import React from "react";
 const Btn = styled.button`
   background: ${({ theme }) => theme.bgPrimaryButton};
   color: ${({ theme }) => theme.cPrimaryButton};
-  font-size: 0.85rem;
+  font-size: ${({ theme }) => theme.font.size.medium};
   padding: 0.5rem 2rem;
   border: none;
   border-radius: 0.87rem;
