@@ -13,7 +13,6 @@ import { useEffect, useState } from "react";
 export default function StickyHeadTable(props) {
   const [columns, setColumn] = useState([]);
   const categoryKey = Object.entries(props.category);
-  console.log(categoryKey);
 
   const categotyItems = props.category.categories;
 
