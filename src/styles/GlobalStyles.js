@@ -68,6 +68,8 @@ export const lightTheme = {
   // table colors
   bgTable: "#000",
   cTableText: "#fff",
+  // Dsahboard card panel colors
+  bgDashboardCard: "#e6e6e6",
 };
 
 export const darkTheme = {
@@ -90,4 +92,6 @@ export const darkTheme = {
   // table colors
   bgTable: "#fff",
   cTableText: "black",
+  // Dsahboard card panel colors
+  bgDashboardCard: "#27283C",
 };

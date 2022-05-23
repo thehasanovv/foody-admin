@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid } from "@mui/material";
-import { ChartBar } from "../../components/Chards/Bar";
-import { ChartDonut } from "../../components/Chards/Donut";
-import { ChartLine } from "../../components/Chards/Line";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid } from '@mui/material';
+import { ChartBar } from '../../components/Chards/Bar';
+import { ChartDonut } from '../../components/Chards/Donut';
+import { ChartLine } from '../../components/Chards/Line';
 
 const Dashboard = () => {
   return (
@@ -33,13 +33,13 @@ const DashboardList = styled.div`
 
 const DashboardCardStyled = styled.div`
   position: relative;
-  width: ${({ width }) => (width ? `${width}%` : "100%")};
+  width: ${({ width }) => (width ? `${width}%` : '100%')};
   height: 472px;
-  background-color: ${({ theme }) => theme.colors.darkBlue_3};
+  background-color: ${({ theme }) => theme.bgDashboardCard};
   border-radius: 14px;
   margin-bottom: 20px !important;
   padding: 20px !important;
-  margin-right: ${({ margin }) => (margin ? `${margin}px` : "0px")};
+  margin-right: ${({ margin }) => (margin ? `${margin}px` : '0px')};
 
   @media screen and (max-width: 1200px) {
     width: 100%;
