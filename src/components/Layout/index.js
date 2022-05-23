@@ -1,22 +1,22 @@
+import { Col, Container, Row } from 'reactstrap';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
-import Grid from '@mui/material/Grid';
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <Grid container fluid={false} spacing={2}>
-        <Grid item xs={12}>
+    <Container>
+      <Row>
+        <Col md={12}>
           <Header />
-        </Grid>
-        <Grid item xs={3}>
+        </Col>
+      </Row>
+      <Row style={{marginTop:'2rem'}}>
+        <Col md={3}>
           <Sidebar />
-        </Grid>
-        <Grid item xs={9}>
-          {children}
-        </Grid>
-      </Grid>
-    </>
+        </Col>
+        <Col md={9}>{children}</Col>
+      </Row>
+    </Container>
   );
 };
 

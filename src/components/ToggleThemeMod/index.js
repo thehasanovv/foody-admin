@@ -1,10 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 let Sun, Moon;
+
 Sun = Moon = styled.svg`
   position: absolute;
-  top: 2rem;
-  right: 4rem;
+  top: 0.7rem;
+  right: 0.2rem;
 `;
 export const ToggleThemeMod = ({ theme, toggleTheme }) => {
   console.log(theme);
@@ -12,7 +13,7 @@ export const ToggleThemeMod = ({ theme, toggleTheme }) => {
     <div onClick={toggleTheme}>
       {
         <div onClick={toggleTheme}>
-          {theme === 'light' ? (
+          {theme === "light" ? (
             <Moon
               xmlns="http://www.w3.org/2000/svg"
               width="48"
