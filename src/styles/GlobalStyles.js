@@ -5,15 +5,22 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     }
 
+    html {
+      overflow-y: scroll;
+    }
+
     body{
         margin: 0;
         padding: 0;
         background:${({ theme }) => theme.body};
         color:${({ theme }) => theme.text};
-        transition:all .5s linear;
+        transition:all 0.3s linear;
         font-family:'Roboto', sans-serif;
     }
     
+    a{
+      text-decoration: none;
+    }
     .isActive {
       background: ${(props) => props.theme.bgSidebarHover};
     }

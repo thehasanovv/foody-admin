@@ -9,10 +9,9 @@ import {
   MdLocalOffer,
   MdLogout,
 } from "react-icons/md";
-import { NavLink } from "react-router-dom";
 
 const SidebarContainer = styled.div`
-  width: 80%;
+  width: 90%;
   height: 450px;
   background: ${({ theme }) => theme.bgSidebar};
   color: ${(props) => props.theme.cSidebarText};

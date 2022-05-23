@@ -13,7 +13,7 @@ import {
   TableContainerStyled,
 } from "./Table.styled";
 
-export default function StickyHeadTable({ rows }) {
+function StickyHeadTable({ rows }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -32,9 +32,11 @@ export default function StickyHeadTable({ rows }) {
         })
       );
   }, []);
+
   const handleDelete = (id) => {
     console.log(id);
   };
+  
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -107,3 +109,5 @@ export default function StickyHeadTable({ rows }) {
     </PaperStyled>
   );
 }
+
+export default React.memo(StickyHeadTable);

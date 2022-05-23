@@ -13,7 +13,7 @@ const Lang = () => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = (flag) => {
-    setFlag(flag);
+    if (flag === "az" || flag === "en" || flag === "fr") setFlag(flag);
     setAnchorEl(null);
   };
 
@@ -33,6 +33,7 @@ const Lang = () => {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
+        disableScrollLock={true}
         MenuListProps={{
           "aria-labelledby": "dropdownBtn",
         }}
