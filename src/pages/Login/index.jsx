@@ -1,7 +1,6 @@
 import * as Yup from "yup";
 import FormContainer from "../../components/Form/FormContainer";
 import FormControl from "../../components/Form/FormControl";
-import Button from "../../components/Button";
 import {
   LoginContainer,
   LoginFormContainer,
