@@ -1,10 +1,11 @@
-import React from 'react';
-import { Field } from 'formik';
-import TextField from '@mui/material/TextField';
+import React from "react";
+import { Field } from "formik";
+import TextField from "@mui/material/TextField";
+import styled from "@emotion/styled";
 
 const Input = ({ name, ...rest }) => {
   return (
-    <div className="">
+    <ContainerInput className="">
       <Field name={name}>
         {({ field, form }) => (
           <TextField
@@ -19,8 +20,11 @@ const Input = ({ name, ...rest }) => {
           />
         )}
       </Field>
-    </div>
+    </ContainerInput>
   );
 };
 
+const ContainerInput = styled.div`
+  margin-bottom: 1rem;
+`;
 export default Input;

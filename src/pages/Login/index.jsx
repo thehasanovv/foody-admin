@@ -1,8 +1,12 @@
 import * as Yup from "yup";
 import FormContainer from "../../components/Form/FormContainer";
 import FormControl from "../../components/Form/FormControl";
-import {LoginContainer,LoginFormContainer,LoginImageContainer} from "./LoginStyle";
-
+import Button from "../../components/Button";
+import {
+  LoginContainer,
+  LoginFormContainer,
+  LoginImageContainer,
+} from "./LoginStyle";
 
 const Login = () => {
   const initialValues = {
@@ -27,41 +31,37 @@ const Login = () => {
   return (
     <LoginContainer>
       <LoginFormContainer>
-      <FormContainer
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={onSubmit}
-      >
-        <FormControl
-          control="input"
-          type="email"
-          label="Email"
-          name="email"
-          variant="outlined"
-        />
-        <FormControl
-          control="input"
-          type="password"
-          label="Password"
-          name="password"
-          variant="outlined"
-        />
-        <FormControl
-          control="input"
-          type="password"
-          label="Confirm password"
-          name="passwordConfirmation"
-          variant="outlined"
-        />
-      </FormContainer>
+        <FormContainer
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={onSubmit}
+        >
+          <FormControl
+            control="input"
+            type="email"
+            label="Email"
+            name="email"
+            variant="outlined"
+          />
+          <FormControl
+            control="input"
+            type="password"
+            label="Password"
+            name="password"
+            variant="outlined"
+          />
+          <FormControl
+            control="input"
+            type="password"
+            label="Confirm password"
+            name="passwordConfirmation"
+            variant="outlined"
+          />
+        </FormContainer>
       </LoginFormContainer>
       <LoginImageContainer>
-              bllzdlv
+        <img src="/images/bglogin.svg" alt="login" />
       </LoginImageContainer>
-            
-      
-
-      
     </LoginContainer>
   );
 };

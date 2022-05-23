@@ -15,6 +15,8 @@ const Btn = styled.button`
   border: 2px solid #c035a2;
   box-shadow: 0px 4px 4px rgba(39, 174, 96, 0.2);
   transition: all 0.3s linear;
+  width: ${({ width }) => (width ? `${width}%` : "100%")};
+
   &:hover {
     background: ${({ theme }) => theme.bgPrimaryButtonHover};
   }

@@ -24,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
     .isActive {
       background: ${(props) => props.theme.bgSidebarHover};
     }
-
+    
     .btn-primary{
         background:${({ theme }) => theme.primary};
         color:${({ theme }) => theme.body};
