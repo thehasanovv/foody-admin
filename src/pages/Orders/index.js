@@ -1,12 +1,8 @@
-import Table from "../../components/Table";
+import StickyHeadTable from "../../components/Table";
 import order from "../../mocks/order/order.json";
 
-const Orders = () => {
-  return (
-    <>
-    Orders
-    </>
-  )
+const Order = () => {
+  return <StickyHeadTable rows={order.orders} />;
 };
 
-export default Orders;
+export default Order;

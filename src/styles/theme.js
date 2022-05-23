@@ -1,11 +1,11 @@
-// import { colors } from './color';
+import { colors } from './colors';
 import { font } from "./font";
-// import { breakpoint } from './breakpoint';
-// import { boxModel } from './boxModel';
+import { breakpoint } from './breakpoints';
+import { boxModel } from './boxModel';
 
 export const themeProv = {
-  // colors,
+  colors,
   font,
-  // breakpoint,
-  // boxModel
+  breakpoint,
+  boxModel
 };

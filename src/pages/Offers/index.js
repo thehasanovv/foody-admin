@@ -1,9 +1,8 @@
-import React from 'react'
+import StickyHeadTable from "../../components/Table";
+import offer from "../../mocks/offer/offer.json";
 
 const Offers = () => {
-  return (
-    <div>Offers</div>
-  )
-}
+  return <StickyHeadTable rows={offer.offers} />;
+};
 
-export default Offers
+export default Offers;

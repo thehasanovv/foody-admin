@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import SidebarItem from './SidebarItem';
+import styled from "styled-components";
+import SidebarItem from "./SidebarItem";
 import {
   MdDashboard,
   MdOutlineProductionQuantityLimits,
@@ -8,8 +8,8 @@ import {
   MdOutlineReorder,
   MdLocalOffer,
   MdLogout,
-} from 'react-icons/md';
-import { NavLink } from 'react-router-dom';
+} from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 const SidebarContainer = styled.div`
   width: 80%;
@@ -23,27 +23,15 @@ const SidebarContainer = styled.div`
 
 const Sidebar = () => {
   return (
+    //prettier-ignore
     <SidebarContainer>
-      <NavLink to="/">
-        <SidebarItem icon={<MdDashboard />} title="Dashboard" />
-      </NavLink>
-      <NavLink to="/products">
-        <SidebarItem icon={<MdOutlineProductionQuantityLimits />} title="Products" />
-      </NavLink>
-      <NavLink to="/restaurants">
-        <SidebarItem icon={<MdRestaurant />} title="Restaurants" />
-      </NavLink>
-      <NavLink to="/category">
-        <SidebarItem icon={<MdCategory />} title="Category" />
-      </NavLink>
-      <NavLink to="/orders">
-        <SidebarItem icon={<MdOutlineReorder />} title="Orders" />
-      </NavLink>
-      <NavLink to="/offers">
-        <SidebarItem icon={<MdLocalOffer />} title="Offers" />
-      </NavLink>
-
-      <SidebarItem icon={<MdLogout />} title="Logout" />
+      <SidebarItem icon={<MdDashboard />} title="Dashboard" path="/" />
+      <SidebarItem icon={<MdOutlineProductionQuantityLimits />} title="Products" path="/products" />
+      <SidebarItem icon={<MdRestaurant />} title="Restaurants"  path="/restaurants" />
+      <SidebarItem icon={<MdCategory />} title="Category" path="/category" />
+      <SidebarItem icon={<MdOutlineReorder />} title="Orders" path="/orders" />
+      <SidebarItem icon={<MdLocalOffer />} title="Offers" path="/offers" />
+      <SidebarItem icon={<MdLogout />} title="Logout" path="/logout"/>
     </SidebarContainer>
   );
 };
