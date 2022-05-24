@@ -5,7 +5,6 @@ import React from 'react';
 import { DrawerContainer, DTitle, DSubContainer, DSubTitle, Panel } from './DrawerStyle';
 
 export const Draw = ({ children, title, subTitle, subTitle2 }) => {
-  console.log(children);
   const [open, setOpen] = React.useState(false);
   return (
     <>
@@ -18,7 +17,7 @@ export const Draw = ({ children, title, subTitle, subTitle2 }) => {
           {/* SubTitle */}
           <DSubContainer>
             <DSubTitle>{subTitle}</DSubTitle>
-            {/* Suvtitle content */}
+            {/* Subtitle content */}
             <Panel>
               <input type="text" placeholder="Search" />
               <button type="submit">Search</button>

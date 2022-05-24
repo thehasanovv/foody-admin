@@ -4,7 +4,7 @@ let Sun, Moon;
 
 Sun = Moon = styled.svg`
   position: absolute;
-  top: 0.7rem;
+  top: 0.5rem;
   right: 0.2rem;
 `;
 export const ToggleThemeMod = ({ theme, toggleTheme }) => {

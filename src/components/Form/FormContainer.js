@@ -4,9 +4,12 @@ import Button from "../Header/Button";
 const FormContainer = ({
   initialValues,
   validationSchema,
-  onSubmit,
+  onSubmitHandler,
   children,
 }) => {
+  const onSubmit = (values) => {
+    onSubmitHandler(values);
+  };
   return (
     <Formik
       initialValues={initialValues}
@@ -16,14 +19,14 @@ const FormContainer = ({
       {(formik) => (
         <Form className="form">
           {children}
-          <Button
-            width={65}
+          {/* <Button
+            width={100}
             type="submit"
             className="registerButton"
             disabled={!formik.isValid || formik.isSubmitting}
           >
             Register
-          </Button>
+          </Button> */}
         </Form>
       )}
     </Formik>
