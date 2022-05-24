@@ -2,11 +2,12 @@ import React from "react";
 import * as Yup from "yup";
 import FormControl from "../../components/Form/FormControl";
 import { DrawerContent } from "../../components/Drawer";
-import { DrawerForm } from "../../components/DrawerForm";
+import { DrawerForm } from "../../components/Drawer/indexxx";
 
-const Products = () => {
+const Products = (props) => {
   const initialValues = {
     email: "",
+    img: "",
   };
 
   const validationSchema = Yup.object({

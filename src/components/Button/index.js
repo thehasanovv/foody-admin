@@ -1,9 +1,13 @@
-import styled from "styled-components";
-import React from "react";
+import styled from 'styled-components';
+import React, { useContext } from 'react';
+import { DrawerContext } from '../../contextApi/DrawerContext';
 
 const Btn = styled.button`
+  /* background: ${({ theme }) => theme.bgPrimaryButton}; */
   color: ${({ theme }) => theme.cPrimaryButton};
   font-size: ${({ theme }) => theme.font.size.extraSmall};
+  width: ${({ width }) => (width ? `${width}%` : 'auto')};
+  background: ${({ bgColor }) => (bgColor ? bgColor : '#C035A2')};
   padding: 0.5rem 2rem;
   border: none;
   border-radius: 0.87rem;
@@ -14,17 +18,17 @@ const Btn = styled.button`
   /* border: 2px solid #c035a2; */
   box-shadow: 0px 4px 4px rgba(39, 174, 96, 0.2);
   transition: all 0.3s linear;
-  width: ${({ width }) => (width ? `${width}%` : "auto")};
-  background: ${({ bgColor }) => (bgColor ? bgColor : "#C035A2")};
 
   &:hover {
     background: ${({ theme }) => theme.bgPrimaryButtonHover};
   }
 `;
 
-const Button = ({ width, bgColor, children, ...rest }) => {
+const Button = ({ children, width, ...rest }) => {
+  const { setOpenDrawer } = useContext(DrawerContext);
+
   return (
-    <Btn width={width} bgColor={bgColor} {...rest}>
+    <Btn width={width} onClick={() => setOpenDrawer(true)} {...rest}>
       {children}
     </Btn>
   );
