@@ -1,13 +1,15 @@
-import * as Yup from "yup";
 import { Formik, Form } from "formik";
-import FormControl from "./FormControl";
+import Button from "../Header/Button";
 
 const FormContainer = ({
   initialValues,
   validationSchema,
-  onSubmit,
+  onSubmitHandler,
   children,
 }) => {
+  const onSubmit = (values) => {
+    onSubmitHandler(values);
+  };
   return (
     <Formik
       initialValues={initialValues}
@@ -17,13 +19,14 @@ const FormContainer = ({
       {(formik) => (
         <Form className="form">
           {children}
-          <button
+          {/* <Button
+            width={100}
             type="submit"
             className="registerButton"
             disabled={!formik.isValid || formik.isSubmitting}
           >
             Register
-          </button>
+          </Button> */}
         </Form>
       )}
     </Formik>
