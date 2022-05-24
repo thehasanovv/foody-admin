@@ -7,6 +7,7 @@ import { DrawerForm } from '../../components/Drawer/indexxx';
 const Products = (props) => {
   const initialValues = {
     email: '',
+    img: '',
   };
 
   const validationSchema = Yup.object({

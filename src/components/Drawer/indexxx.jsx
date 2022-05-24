@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../Button';
 import { Formik } from 'formik';
 import {
@@ -23,17 +23,21 @@ export const DrawerForm = ({
   const onSubmit = (values, { resetForm }) => {
     console.log(values);
   };
+  const [uploadImg, setUploadImg] = useState(null);
+
   return (
     <>
       <DrawerContainer>
         {/* Title */}
         <DTitle>{title}</DTitle>
+        {uploadImg && <img width="150" height="100" cover src={URL.createObjectURL(uploadImg)} />}
+
         {/* ===================================================== */}
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={onSubmit}>
-          {(formik) => (
+          {({ setFieldValue, resetForm }) => (
             <FormikForm>
               {/* ===================================================== */}
               {/* SubTitle */}
@@ -41,7 +45,11 @@ export const DrawerForm = ({
                 <DSubTitle>{subTitle}</DSubTitle>
                 {/* Subtitle content */}
                 <Panel>
-                  <InputFile />
+                  <InputFile
+                    setFieldValue={setFieldValue}
+                    imgKey="img"
+                    setUploadImg={setUploadImg}
+                  />
                 </Panel>
               </DSubContainer>
               {/* ===================================================== */}
