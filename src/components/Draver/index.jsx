@@ -1,16 +1,17 @@
 import { Drawer } from '@material-ui/core';
-import { Button, List } from '@mui/material';
-import { Box } from '@mui/system';
-import React from 'react';
+import { Button as MButton } from '@mui/material';
+import React, { useContext } from 'react';
+import Login from '../../pages/Login';
+import Button from '../Header/Button';
 import { DrawerContainer, DTitle, DSubContainer, DSubTitle, Panel } from './DrawerStyle';
+//import context api
+import { DrawerContext } from '../../contextApi/DrawerContext';
+export const Draw = ({ title, subTitle, subTitle2, onSubmit }) => {
+  const { openDrawer, setOpenDrawer } = useContext(DrawerContext);
 
-export const Draw = ({ children, title, subTitle, subTitle2 }) => {
-  console.log(children);
-  const [open, setOpen] = React.useState(false);
   return (
     <>
-      <Button onClick={() => setOpen(true)}>Open</Button>
-      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+      <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <DrawerContainer>
           {/* Title */}
           <DTitle>{title}</DTitle>
@@ -21,7 +22,7 @@ export const Draw = ({ children, title, subTitle, subTitle2 }) => {
             {/* Suvtitle content */}
             <Panel>
               <input type="text" placeholder="Search" />
-              <button type="submit">Search</button>
+              {/* <button type="submit">Search</button> */}
             </Panel>
           </DSubContainer>
           {/* ===================================================== */}
@@ -31,29 +32,17 @@ export const Draw = ({ children, title, subTitle, subTitle2 }) => {
             {/* Subtitle content */}
             <Panel>
               <div>
-                It is a long established fact that a reader will be distracted by the readable
-                content of a page when looking at its layout. The point of using Lorem Ipsum is that
-                it has a more-or-less normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English. Many desktop publishing
-                packages and web page editors now use Lorem Ipsum as their default model text, and a
-                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
-                versions have evolved over the years, sometimes by accident, sometimes on purpose
-                (injected humour and the like). It is a long established fact that a reader will be
-                distracted by the readable content of a page when looking at its layout. The point
-                of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
-                as opposed to using 'Content here, content here', making it look like readable
-                English. Many desktop publishing packages and web page editors now use Lorem Ipsum
-                as their default model text, and a search for 'lorem ipsum' will uncover many web
-                sites still in their infancy. Various versions have evolved over the years,
-                sometimes by accident, sometimes on purpose (injected humour and the like).
+                <Login />
               </div>
             </Panel>
           </DSubContainer>
           {/* ===================================================== */}
           {/* Button */}
           <DSubContainer>
-            <button type="submit">Submit</button>
-            <button type="submit">Submit</button>
+            {/*  <button type="">Cancel</button> */}
+            <Button width={50} type="submit" onClick={onSubmit} className="registerButton">
+              Register
+            </Button>
             {/* Buttons */}
           </DSubContainer>
         </DrawerContainer>
