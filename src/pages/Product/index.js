@@ -8,22 +8,11 @@ import { DrawerForm } from "../../components/DrawerForm";
 const Products = () => {
   const initialValues = {
     email: "",
-    password: "",
-    passwordConfirmation: "",
   };
 
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid email format").required("Required"),
-    password: Yup.string().required("Password is required"),
-    passwordConfirmation: Yup.string().oneOf(
-      [Yup.ref("password"), null],
-      "Passwords must match"
-    ),
   });
-
-  const onSubmitHandler = (values) => {
-    console.log("Form data", values);
-  };
 
   const [open, setOpen] = React.useState(false);
 
@@ -45,21 +34,16 @@ const Products = () => {
           subTitle="Upload your image"
           subTitle2="Add your description and necessary information"
           setIsOpen={handleClose}
-          onSubmitHandler={onSubmitHandler}
+          initialValues={initialValues}
+          validationSchema={validationSchema}
         >
-          <FormContainer
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmitHandler={onSubmitHandler}
-          >
-            <FormControl
-              control="input"
-              type="email"
-              label="Email"
-              name="email"
-              variant="outlined"
-            />
-          </FormContainer>
+          <FormControl
+            control="input"
+            type="email"
+            label="Email"
+            name="email"
+            variant="outlined"
+          />
         </DrawerForm>
       </DrawerContent>
     </div>

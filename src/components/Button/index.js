@@ -2,7 +2,6 @@ import styled from "styled-components";
 import React from "react";
 
 const Btn = styled.button`
-  background: ${({ theme }) => theme.bgPrimaryButton};
   color: ${({ theme }) => theme.cPrimaryButton};
   font-size: ${({ theme }) => theme.font.size.extraSmall};
   padding: 0.5rem 2rem;
@@ -16,14 +15,19 @@ const Btn = styled.button`
   box-shadow: 0px 4px 4px rgba(39, 174, 96, 0.2);
   transition: all 0.3s linear;
   width: ${({ width }) => (width ? `${width}%` : "auto")};
+  background: ${({ bgColor }) => (bgColor ? bgColor : "#C035A2")};
 
   &:hover {
     background: ${({ theme }) => theme.bgPrimaryButtonHover};
   }
 `;
 
-const Button = ({ width, children }) => {
-  return <Btn width={width}>{children}</Btn>;
+const Button = ({ width, bgColor, children, ...rest }) => {
+  return (
+    <Btn width={width} bgColor={bgColor} {...rest}>
+      {children}
+    </Btn>
+  );
 };
 
 export default Button;

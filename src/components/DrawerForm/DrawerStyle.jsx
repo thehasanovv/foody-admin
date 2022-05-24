@@ -1,16 +1,19 @@
-import styled from 'styled-components';
-import { List } from '@mui/material';
-import { Box } from '@mui/system';
+import styled from "styled-components";
+import { List } from "@mui/material";
+import { Box } from "@mui/system";
+import { Form } from "formik";
 
 export const DrawerContainer = styled(List)`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   width: 70vw;
   height: 100vh;
   background: ${({ theme }) => theme.bgDrawer};
 `;
-
+export const FormikForm = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+`;
 //Bu panel Drawer icerisinde olan form ve sekil inputu ucun hazirlanib
 export const Panel = styled(Box)`
   display: flex;
