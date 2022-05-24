@@ -13,6 +13,7 @@ const Input = ({ name, ...rest }) => {
             {...field}
             {...rest}
             error={form.errors[name] && form.touched[name]}
+            fullWidth
             helperText={
               // form.errors[name] && form.touched[name] && form.errors[name]
               form.errors[name] && form.touched[name] && form.errors[name]
@@ -26,5 +27,6 @@ const Input = ({ name, ...rest }) => {
 
 const ContainerInput = styled.div`
   margin-bottom: 1rem;
+  width: 100%;
 `;
 export default Input;

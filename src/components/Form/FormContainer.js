@@ -1,14 +1,18 @@
 import { Formik, Form } from 'formik';
-import Button from '../Header/Button';
+import Button from '../Button/index';
 
-const FormContainer = ({ initialValues, validationSchema, onSubmit, children }) => {
+const FormContainer = ({ initialValues, validationSchema, children }) => {
+  const onSubmit = (values) => {
+    // onSubmitHandler(values);
+    console.log(values);
+  };
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
       {(formik) => (
         <Form className="form">
           {children}
           <Button
-            width={65}
+            width={100}
             type="submit"
             className="registerButton"
             disabled={!formik.isValid || formik.isSubmitting}>

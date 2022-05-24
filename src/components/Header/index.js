@@ -1,14 +1,17 @@
-import styled from "styled-components";
-import Logo from "./Logo";
-import Button from "./Button";
-import User from "./User";
-import Lang from "./Lang";
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import Logo from './Logo';
+import Button from '../Button';
+import User from './User';
+import Lang from './Lang';
+import { DrawerContext } from '../../contextApi/DrawerContext';
 
 const Header = () => {
+  const { setOpenDrawer } = useContext(DrawerContext);
   return (
     <ContainerHeader>
       <Logo />
-      <Button>ADD PRODUCT</Button>
+      <Button onClick={setOpenDrawer}>ADD PRODUCT</Button>
       <Lang />
       <User />
     </ContainerHeader>

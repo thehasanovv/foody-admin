@@ -36,7 +36,7 @@ function StickyHeadTable({ rows }) {
   const handleDelete = (id) => {
     console.log(id);
   };
-  
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
