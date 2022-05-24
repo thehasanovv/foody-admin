@@ -1,7 +1,12 @@
 import React from 'react';
+import BCard from '../../components/Cards/BigCArd';
 
 const Restaurants = () => {
-  return <div></div>;
+  return (
+    <div>
+      <BCard />
+    </div>
+  );
 };
 
 export default Restaurants;

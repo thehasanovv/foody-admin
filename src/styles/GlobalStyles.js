@@ -79,6 +79,10 @@ export const lightTheme = {
   //Drawer colors
   bgDrawer: '#e6e6e6',
   bgDrawerSecond: '#bebebe',
+  // card colors
+  bgCard: '#c8c8c8',
+  Cardshadow:
+    'rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;',
 };
 
 export const darkTheme = {
@@ -106,4 +110,8 @@ export const darkTheme = {
   //Drawer colors
   bgDrawer: '#38394e',
   bgDrawerSecond: '#43445a',
+  // card colors
+  bgCard: '#fff',
+  Cardshadow:
+    'rgba(255 ,255, 255, 0.03) 0px 2px 1px, rgba(255,255, 255, 0.03) 0px 4px 2px, rgba(255,255, 255, 0.03) 0px 8px 4px, rgba(255,255,255, 0.03) 0px 16px 8px, rgba(255, 255, 255, 0.03) 0px 32px 16px;',
 };
