@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   CardContainer,
   ImageContainer,
@@ -9,10 +9,15 @@ import {
   Button,
   Image,
   CartBody,
-} from "./ProductCardStyle";
+} from './ProductCardStyle';
+import { useDispatch } from 'react-redux';
+import { IconButton } from '@material-ui/core';
 
-const ProductCard = (props) => {
-  const { name, desc, price, restaurant, img_url, id } = props;
+const ProductCard = ({ name, price, restaurant, img_url, id, rm }) => {
+  const dispatch = useDispatch();
+  const handleDelete = (pid) => {
+    dispatch(rm(pid));
+  };
   return (
     <CardContainer>
       <ImageContainer>
@@ -23,7 +28,9 @@ const ProductCard = (props) => {
         <RestaurantName>{restaurant}</RestaurantName>
         <SubContainer>
           <Price>$ {price}</Price>
-          <Button />
+          <IconButton onClick={() => handleDelete(id)}>
+            <Button />
+          </IconButton>
         </SubContainer>
       </CartBody>
     </CardContainer>

@@ -9,11 +9,11 @@ export const orderSlice = createSlice({
     getOrders: (state, action) => {
       state.orders = action.payload;
     },
-    addOrder: (state) => {
+    addOrder: (state,action) => {
       state.orders.push(action.payload);
       /* {[...state,action.payload]} */
     },
-    deleteOrder: (state) => {
+    deleteOrder: (state,action) => {
       state.orders = state.orders.filter((item) => item.id !== action.payload);
     },
   },

@@ -9,10 +9,10 @@ export const restaurantSlice = createSlice({
     getRestaurants: (state, action) => {
       state.restaurants = action.payload;
     },
-    addRestaurant: (state) => {
+    addRestaurant: (state, action) => {
       state.restaurants.push(action.payload);
     },
-    deleteRestaurant: (state) => {
+    deleteRestaurant: (state, action) => {
       state.restaurants = state.restaurants.filter((item) => item.id !== action.payload);
     },
   },

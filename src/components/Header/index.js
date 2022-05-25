@@ -1,14 +1,13 @@
-import React, { useContext } from "react";
-import styled from "styled-components";
-import Logo from "./Logo";
-import Button from "../Button";
-import User from "./User";
-import Lang from "./Lang";
-import { DrawerContext } from "../../contextApi/DrawerContext";
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import Logo from './Logo';
+import Button from '../Button';
+import User from './User';
+import Lang from './Lang';
+import { DrawerContext } from '../../contextApi/DrawerContext';
 
 const Header = () => {
   const { setOpenDrawer } = useContext(DrawerContext);
-  console.log(setOpenDrawer);
   return (
     <ContainerHeader>
       <Logo />

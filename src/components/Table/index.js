@@ -1,21 +1,20 @@
-import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
-import TableRow from "@mui/material/TableRow";
-import IconDelete from "../Icons/Delete";
-import { Button } from "@mui/material";
-import { useState, useEffect } from "react";
-import {
-  PaperStyled,
-  TableCellStyled,
-  TableContainerStyled,
-} from "./Table.styled";
+import * as React from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableHead from '@mui/material/TableHead';
+import TablePagination from '@mui/material/TablePagination';
+import TableRow from '@mui/material/TableRow';
+import IconDelete from '../Icons/Delete';
+import { Button } from '@mui/material';
+import { useState, useEffect } from 'react';
+import { PaperStyled, TableCellStyled, TableContainerStyled } from './Table.styled';
 
-function StickyHeadTable({ rows }) {
+import { useDispatch } from 'react-redux';
+
+function StickyHeadTable({ rows, rm }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const dispatch = useDispatch();
 
   const [columns, setColumn] = useState([]);
 
@@ -27,14 +26,14 @@ function StickyHeadTable({ rows }) {
             id: key,
             label: key,
             minWidth: 100,
-            align: "center",
+            align: 'center',
           };
-        })
+        }),
       );
   }, []);
 
   const handleDelete = (id) => {
-    console.log(id);
+    dispatch(rm(id));
   };
 
   const handleChangePage = (event, newPage) => {
@@ -57,43 +56,36 @@ function StickyHeadTable({ rows }) {
                   // cellwidth={100}
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }}
-                >
+                  style={{ minWidth: column.minWidth }}>
                   {column.label}
                 </TableCellStyled>
               ))}
-              <TableCellStyled align={"center"}>Delete</TableCellStyled>
+              <TableCellStyled align={'center'}>Delete</TableCellStyled>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
-                    {columns.map((column) => {
-                      const value = row[column.id];
-                      return (
-                        // prettier-ignore
-                        <TableCellStyled key={column.id} align={column.align}>
+            {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+              return (
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+                  {columns.map((column) => {
+                    const value = row[column.id];
+                    return (
+                      // prettier-ignore
+                      <TableCellStyled key={column.id} align={column.align}>
                             {column.id === 'img_url'
                               ? <img width="45" height="45" src={value} />
                               : value.length > 30 ? `${value.slice(0, 30)}...` : value}
                         </TableCellStyled>
-                      );
-                    })}
-                    <TableCellStyled
-                      key={row.id}
-                      align={"center"}
-                      onClick={() => handleDelete(row.id)}
-                    >
-                      <Button variant="text">
-                        <IconDelete />
-                      </Button>
-                    </TableCellStyled>
-                  </TableRow>
-                );
-              })}
+                    );
+                  })}
+                  <TableCellStyled key={row.id} align={'center'}>
+                    <Button variant="text" onClick={() => handleDelete(row.id)}>
+                      <IconDelete />
+                    </Button>
+                  </TableCellStyled>
+                </TableRow>
+              );
+            })}
           </TableBody>
         </Table>
       </TableContainerStyled>
