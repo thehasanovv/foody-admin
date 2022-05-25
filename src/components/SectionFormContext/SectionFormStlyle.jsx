@@ -13,12 +13,7 @@ export const FormikForm = styled(Form)`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100%;
-
-  & input {
-    background: ${({ theme }) => theme.colors.darkBlue_4};
-    color: "white";
-  }
+  height: 90%;
 `;
 //Bu panel Drawer icerisinde olan form ve sekil inputu ucun hazirlanib
 export const Panel = styled(Box)`
@@ -44,6 +39,7 @@ export const DTitle = styled(Box)`
   padding: 0 0 0 3rem;
   font-size: 30px; //bunu hell etmek global fonts goturmesi ucun
   font-weight: 700; //bunu hell etmek global fonts goturmesi ucun
+  color: ${({ theme }) => theme.colors.grayText};
 `;
 /* ======================================= */
 

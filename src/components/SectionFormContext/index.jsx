@@ -20,6 +20,7 @@ export const SectionFormContext = ({
 }) => {
   const { setOpenDrawer } = useContext(DrawerContext);
   const [uploadImg, setUploadImg] = useState(null);
+
   const onSubmit = (values, { resetForm }) => {
     console.log(values);
     setUploadImg(null);
@@ -71,7 +72,7 @@ export const SectionFormContext = ({
                 >
                   Cancel
                 </Button>
-                <Button  width={45} onClick={()=>resetForm()}>
+                <Button type="submit" width={45}>
                   Submit
                 </Button>
               </DSubContainer>

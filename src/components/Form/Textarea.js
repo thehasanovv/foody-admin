@@ -1,17 +1,17 @@
 import React from "react";
 import { Field } from "formik";
-import { FormField } from "./FormStyled";
 import { TextFieldMui, ContainerInput } from "./FormStyled";
 
-const Input = ({ name, ...rest }) => {
+const Textarea = ({ name, ...rest }) => {
   return (
-    <ContainerInput className="">
-      <FormField name={name}>
+    <ContainerInput>
+      <Field name={name}>
         {({ field, form }) => (
           <TextFieldMui
             id={name}
             {...field}
             {...rest}
+            multiline
             error={form.errors[name] && form.touched[name]}
             fullWidth
             helperText={
@@ -19,9 +19,9 @@ const Input = ({ name, ...rest }) => {
             }
           />
         )}
-      </FormField>
+      </Field>
     </ContainerInput>
   );
 };
 
-export default Input;
+export default Textarea;

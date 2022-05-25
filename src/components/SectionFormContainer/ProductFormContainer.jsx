@@ -1,10 +1,27 @@
 import React from "react";
 import * as Yup from "yup";
 import FormControl from "../Form/FormControl";
-
 import { SectionFormContext } from "../SectionFormContext";
 
-const ProductsForm = ({ setIsOpen }) => {
+const options = [
+  {
+    id: "001",
+    title: "MC Donalds",
+    value: "mcDonalds",
+  },
+  {
+    id: "002",
+    title: "Papa John's",
+    value: "papaJohns",
+  },
+  {
+    id: "003",
+    title: "Burger King",
+    value: "burgerKing",
+  },
+];
+
+const ProductsForm = () => {
   const initialValues = {
     img: "",
     name: "",
@@ -35,7 +52,8 @@ const ProductsForm = ({ setIsOpen }) => {
           variant="outlined"
         />
         <FormControl
-          control="input"
+          control="textarea"
+          rows={4}
           type="text"
           label="Description"
           name="description"
@@ -43,17 +61,16 @@ const ProductsForm = ({ setIsOpen }) => {
         />
         <FormControl
           control="input"
-          type="text"
+          type="number"
           label="Price"
           name="price"
           variant="outlined"
         />
         <FormControl
-          control="input"
-          type="text"
+          control="select"
           label="Restuarants"
           name="rest"
-          variant="outlined"
+          options={options}
         />
       </SectionFormContext>
     </div>
