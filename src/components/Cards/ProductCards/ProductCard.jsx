@@ -1,5 +1,3 @@
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-
 import React from "react";
 import {
   CardContainer,

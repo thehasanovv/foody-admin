@@ -14,20 +14,16 @@ const Products = () => {
     setOpenDrawer(false);
   };
 
-  const handleOpen = () => {
-    setOpenDrawer(true);
-  };
-
   return (
     <>
       {/* Section Form Drawer  */}
       <DrawerContent rotate="right" isOpen={openDrawer} setIsOpen={handleClose}>
-        <ProductFormContainer setIsOpen={handleClose} />
+        <ProductFormContainer />
       </DrawerContent>
       {/* Section Header  */}
       <SectionHeaderContainer>
         <h2>Products</h2>
-        <Button onClick={handleOpen}>Add Products</Button>
+        <Button onClick={setOpenDrawer.bind(null, true)}>Add Products</Button>
       </SectionHeaderContainer>
       {/* Section Product Cards  */}
       <ProductCards datas={product.products} />

@@ -8,11 +8,17 @@ export const DrawerContainer = styled(List)`
   height: 100vh;
   background: ${({ theme }) => theme.bgDrawer};
 `;
+
 export const FormikForm = styled(Form)`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
+
+  & input {
+    background: ${({ theme }) => theme.colors.darkBlue_4};
+    color: "white";
+  }
 `;
 //Bu panel Drawer icerisinde olan form ve sekil inputu ucun hazirlanib
 export const Panel = styled(Box)`

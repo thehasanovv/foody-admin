@@ -8,7 +8,7 @@ const Input = ({ name, ...rest }) => {
     <ContainerInput className="">
       <Field name={name}>
         {({ field, form }) => (
-          <TextField
+          <TextFieldMui
             id={name}
             {...field}
             {...rest}
@@ -28,5 +28,22 @@ const Input = ({ name, ...rest }) => {
 const ContainerInput = styled.div`
   margin-bottom: 1rem;
   width: 100%;
+`;
+
+const TextFieldMui = styled(TextField)`
+  & label.Mui-focused {
+    color: #c035a2;
+    font-weight: 700;
+  }
+  & label {
+    color: #c035a2;
+    font-weight: 500;
+  }
+
+  & .MuiOutlinedInput-root {
+    &.Mui-focused fieldset {
+      border: 2px solid #c035a2;
+    }
+  }
 `;
 export default Input;

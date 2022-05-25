@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     *{
@@ -49,69 +49,70 @@ export const GlobalStyles = createGlobalStyle`
     background: #ce68ed;
     }
 
+ 
 `;
 
 export const fonts = {
-  small: '12px',
-  medium: '18px',
-  large: '28px',
+  small: "12px",
+  medium: "18px",
+  large: "28px",
 };
 export const lightTheme = {
-  body: '#fff',
-  text: '#121212',
-  primary: '#6200ee',
-  bgSidebar: '#C74FEB',
-  bgSidebarHover: '#ce68ed',
-  cSidebarText: '#FCDDEC',
+  body: "#fff",
+  text: "#121212",
+  primary: "#6200ee",
+  bgSidebar: "#C74FEB",
+  bgSidebarHover: "#ce68ed",
+  cSidebarText: "#FCDDEC",
   //primary button properties
-  bgPrimaryButton: '#c035a2',
-  bgPrimaryButtonHover: '#c74feb',
-  cPrimaryButton: '#000',
+  bgPrimaryButton: "#c035a2",
+  bgPrimaryButtonHover: "#c74feb",
+  cPrimaryButton: "#000",
   //sidebar Icons text color
-  cSidebarText: '#fff',
-  bgSidebar: '#1e1e30',
-  bgSidebarHover: '#27283c',
+  cSidebarText: "#fff",
+  bgSidebar: "#1e1e30",
+  bgSidebarHover: "#27283c",
   // table colors
-  bgTable: '#000',
-  cTableText: '#fff',
+  bgTable: "#000",
+  cTableText: "#fff",
   // Dsahboard card panel colors
-  bgDashboardCard: '#e6e6e6',
+  bgDashboardCard: "#e6e6e6",
   //Drawer colors
-  bgDrawer: '#e6e6e6',
-  bgDrawerSecond: '#bebebe',
+  bgDrawer: "#e6e6e6",
+  bgDrawerSecond: "#bebebe",
   // card colors
-  bgCard: '#c8c8c8',
+  bgCard: "#c8c8c8",
   Cardshadow:
-    'rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;',
+    "rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;",
 };
 
 export const darkTheme = {
-  body: '#1e1e30',
-  text: '#C7C7C7',
-  secondaryText: '#8E8E93',
-  primary: '#27283C',
-  secondary: '',
-  bgSidebar: '#C74FEB',
-  bgSidebarHover: '#ce68ed',
-  cSidebarText: '#FCDDEC',
+  body: "#1e1e30",
+  text: "#C7C7C7",
+  secondaryText: "#8E8E93",
+  primary: "#27283C",
+  secondary: "",
+  bgSidebar: "#C74FEB",
+  bgSidebarHover: "#ce68ed",
+  cSidebarText: "#FCDDEC",
   //primary button properties
-  bgPrimaryButton: '#c035a2',
-  bgPrimaryButtonHover: '#c74feb',
-  cPrimaryButton: '#fff',
+  bgPrimaryButton: "#c035a2",
+  bgPrimaryButtonHover: "#c74feb",
+  cPrimaryButton: "#fff",
   //sidebar Icons text color
-  cSidebarText: '#fff',
-  bgSidebar: '#c74feb',
-  bgSidebarHover: '#ce68ed',
+  cSidebarText: "#fff",
+  bgSidebar: "#c74feb",
+  bgSidebarHover: "#ce68ed",
   // table colors
-  bgTable: '#fff',
-  cTableText: 'black',
+  bgTable: "#fff",
+  cTableText: "black",
   // Dsahboard card panel colors
-  bgDashboardCard: '#27283C',
+  bgDashboardCard: "#27283C",
   //Drawer colors
-  bgDrawer: '#38394e',
-  bgDrawerSecond: '#43445a',
+  bgDrawer: "#38394e",
+  bgDrawerSecond: "#43445a",
   // card colors
-  bgCard: '#fff',
+  bgCard: "#fff",
   Cardshadow:
-    'rgba(255 ,255, 255, 0.03) 0px 2px 1px, rgba(255,255, 255, 0.03) 0px 4px 2px, rgba(255,255, 255, 0.03) 0px 8px 4px, rgba(255,255,255, 0.03) 0px 16px 8px, rgba(255, 255, 255, 0.03) 0px 32px 16px;',
+    "rgba(255 ,255, 255, 0.03) 0px 2px 1px, rgba(255,255, 255, 0.03) 0px 4px 2px, rgba(255,255, 255, 0.03) 0px 8px 4px, rgba(255,255,255, 0.03) 0px 16px 8px, rgba(255, 255, 255, 0.03) 0px 32px 16px;",
 };
