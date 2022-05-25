@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import Button from '../Button';
-import { Formik } from 'formik';
+import Button from "../Button";
+import InputFile from "../InputFile";
+import { Formik } from "formik";
+import { useState, useContext } from "react";
+import { DrawerContext } from "../../contextApi/DrawerContext";
 import {
   DrawerContainer,
   DTitle,
@@ -8,46 +10,47 @@ import {
   DSubTitle,
   Panel,
   FormikForm,
-} from './DrawerStyle';
-import InputFile from '../InputFile';
+} from "./SectionFormStlyle";
 
-export const DrawerForm = ({
+export const SectionFormContext = ({
   children,
   title,
-  subTitle,
-  subTitle2,
   initialValues,
   validationSchema,
-  setIsOpen,
 }) => {
+  const { setOpenDrawer } = useContext(DrawerContext);
+  const [uploadImg, setUploadImg] = useState(null);
   const onSubmit = (values, { resetForm }) => {
     console.log(values);
+    setUploadImg(null);
+    setOpenDrawer(false);
+    resetForm();
   };
-  const [uploadImg, setUploadImg] = useState(null);
 
   return (
     <>
       <DrawerContainer>
         {/* Title */}
         <DTitle>{title}</DTitle>
-        {uploadImg && <img width="150" height="100" cover src={URL.createObjectURL(uploadImg)} />}
-
-        {/* ===================================================== */}
+        {uploadImg && (
+          <img width="150" height="100" src={URL.createObjectURL(uploadImg)} />
+        )}
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={onSubmit}>
+          onSubmit={onSubmit}
+        >
           {({ setFieldValue, resetForm }) => (
             <FormikForm>
               {/* ===================================================== */}
               {/* SubTitle */}
               <DSubContainer>
-                <DSubTitle>{subTitle}</DSubTitle>
+                <DSubTitle>Upload your image</DSubTitle>
                 {/* Subtitle content */}
                 <Panel>
                   <InputFile
-                    setFieldValue={setFieldValue}
                     imgKey="img"
+                    setFieldValue={setFieldValue}
                     setUploadImg={setUploadImg}
                   />
                 </Panel>
@@ -55,7 +58,9 @@ export const DrawerForm = ({
               {/* ===================================================== */}
               {/* SubTitle2 */}
               <DSubContainer>
-                <DSubTitle>{subTitle2}</DSubTitle>
+                <DSubTitle>
+                  Add your description and necessary information
+                </DSubTitle>
                 {/* Subtitle content */}
                 <Panel>{children}</Panel>
               </DSubContainer>
@@ -63,12 +68,14 @@ export const DrawerForm = ({
 
               <DSubContainer>
                 <Button
+                  type="button"
+                  bgColor={"#3268a8"}
                   width={45}
-                  bgColor={'#3268a8'}
                   onClick={() => {
-                    setIsOpen();
+                    setOpenDrawer(false);
                     resetForm();
-                  }}>
+                  }}
+                >
                   Cancel
                 </Button>
                 <Button type="submit" width={45}>

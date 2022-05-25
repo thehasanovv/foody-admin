@@ -1,13 +1,13 @@
 import Button from "../../components/Button";
-import RestaurantCards from "../../components/Cards/RestaurantCards";
-import RestaurantFormContainer from "../../components/SectionFormContainer/RestaurantFormContainer";
+import ProductCards from "../../components/Cards/ProductCards";
+import ProductFormContainer from "../../components/SectionFormContainer/ProductFormContainer";
 import SectionHeaderContainer from "../../components/SectionHeaderContainer";
-import restaurant from "../../mocks/restaurant/rest.json";
+import product from "../../mocks/product/product.json";
 import { useContext } from "react";
 import { DrawerContent } from "../../components/Drawer";
 import { DrawerContext } from "../../contextApi/DrawerContext";
 
-const Restaurants = () => {
+const Products = () => {
   const { openDrawer, setOpenDrawer } = useContext(DrawerContext);
 
   const handleClose = () => {
@@ -22,17 +22,17 @@ const Restaurants = () => {
     <>
       {/* Section Form Drawer  */}
       <DrawerContent rotate="right" isOpen={openDrawer} setIsOpen={handleClose}>
-        <RestaurantFormContainer />
+        <ProductFormContainer setIsOpen={handleClose} />
       </DrawerContent>
       {/* Section Header  */}
       <SectionHeaderContainer>
-        <h2>Restaurants</h2>
-        <Button onClick={handleOpen}>Add Restaurant</Button>
+        <h2>Products</h2>
+        <Button onClick={handleOpen}>Add Products</Button>
       </SectionHeaderContainer>
       {/* Section Product Cards  */}
-      <RestaurantCards datas={restaurant.restaurants} />
+      <ProductCards datas={product.products} />
     </>
   );
 };
 
-export default Restaurants;
+export default Products;
