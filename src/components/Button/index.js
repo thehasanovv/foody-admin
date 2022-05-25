@@ -1,6 +1,5 @@
+import { IconButton } from '@mui/material';
 import styled from 'styled-components';
-import React, { useContext } from 'react';
-import { DrawerContext } from '../../contextApi/DrawerContext';
 
 const Btn = styled.button`
   /* background: ${({ theme }) => theme.bgPrimaryButton}; */
@@ -25,10 +24,8 @@ const Btn = styled.button`
 `;
 
 const Button = ({ children, width, ...rest }) => {
-  const { setOpenDrawer } = useContext(DrawerContext);
-
   return (
-    <Btn width={width} onClick={() => setOpenDrawer(true)} {...rest}>
+    <Btn width={width} {...rest}>
       {children}
     </Btn>
   );

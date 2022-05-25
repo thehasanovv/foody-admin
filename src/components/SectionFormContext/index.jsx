@@ -30,7 +30,6 @@ export const SectionFormContext = ({
   return (
     <>
       <DrawerContainer>
-        {/* Title */}
         <DTitle>{title}</DTitle>
         {uploadImg && (
           <img width="150" height="100" src={URL.createObjectURL(uploadImg)} />
@@ -42,8 +41,6 @@ export const SectionFormContext = ({
         >
           {({ setFieldValue, resetForm }) => (
             <FormikForm>
-              {/* ===================================================== */}
-              {/* SubTitle */}
               <DSubContainer>
                 <DSubTitle>Upload your image</DSubTitle>
                 {/* Subtitle content */}
@@ -55,8 +52,6 @@ export const SectionFormContext = ({
                   />
                 </Panel>
               </DSubContainer>
-              {/* ===================================================== */}
-              {/* SubTitle2 */}
               <DSubContainer>
                 <DSubTitle>
                   Add your description and necessary information
@@ -64,8 +59,6 @@ export const SectionFormContext = ({
                 {/* Subtitle content */}
                 <Panel>{children}</Panel>
               </DSubContainer>
-              {/* Buttons */}
-
               <DSubContainer>
                 <Button
                   type="button"
@@ -78,7 +71,7 @@ export const SectionFormContext = ({
                 >
                   Cancel
                 </Button>
-                <Button type="submit" width={45}>
+                <Button  width={45} onClick={()=>resetForm()}>
                   Submit
                 </Button>
               </DSubContainer>
