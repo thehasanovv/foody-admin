@@ -3,7 +3,7 @@ import Button from '../../components/Button';
 import ProductCards from '../../components/Cards/ProductCards';
 import ProductFormContainer from '../../components/SectionFormContainer/ProductFormContainer';
 import SectionHeaderContainer from '../../components/SectionHeaderContainer';
-import { getProducts, deleteProduct } from '../../store/slices/ProductSlice';
+import { getProducts, deleteProduct } from '../../store/slicers/ProductSlice';
 import { DrawerContent } from '../../components/Drawer';
 import { DrawerContext } from '../../contextApi/DrawerContext';
 import { useContext, useEffect } from 'react';

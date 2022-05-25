@@ -2,7 +2,7 @@ import Button from '../../components/Button';
 import axios from 'axios';
 import StickyHeadTable from '../../components/Table';
 import SectionHeaderContainer from '../../components/SectionHeaderContainer';
-import { getCategories, deleteCategory } from '../../store/slices/CategorySlice';
+import { getCategories, deleteCategory } from '../../store/slicers/CategorySlice';
 import { useContext, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 

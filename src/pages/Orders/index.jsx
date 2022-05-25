@@ -1,7 +1,7 @@
 import axios from 'axios';
 import StickyHeadTable from '../../components/Table';
 import SectionHeaderContainer from '../../components/SectionHeaderContainer';
-import { getOrders, deleteOrder } from '../../store/slices/OrderSlice';
+import { getOrders, deleteOrder } from '../../store/slicers/OrderSlice';
 import { useContext, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 

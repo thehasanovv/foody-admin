@@ -6,7 +6,7 @@ import SectionHeaderContainer from '../../components/SectionHeaderContainer';
 import { DrawerContext } from '../../contextApi/DrawerContext';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useContext, useEffect } from 'react';
-import { getOffers, deleteOffer } from '../../store/slices/OfferSlice';
+import { getOffers, deleteOffer } from '../../store/slicers/OfferSlice';
 
 const Offers = () => {
   const ctx = useContext(DrawerContext);
