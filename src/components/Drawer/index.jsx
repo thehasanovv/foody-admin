@@ -1,12 +1,9 @@
-import * as React from 'react';
-import Drawer from '@mui/material/Drawer';
-import { DrawerContext } from '../../contextApi/DrawerContext';
+import * as React from "react";
+import Drawer from "@mui/material/Drawer";
 
-export const DrawerContent = ({ rotate, children }) => {
-  const { openDrawer, setOpenDrawer } = React.useContext(DrawerContext);
-  console.log(openDrawer);
+export const DrawerContent = ({ rotate, isOpen, setIsOpen, children }) => {
   return (
-    <Drawer anchor={rotate} open={openDrawer} onClose={() => setOpenDrawer(false)}>
+    <Drawer anchor={rotate} open={isOpen} onClose={() => setIsOpen()}>
       {children}
     </Drawer>
   );

@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import styled from 'styled-components';
-import Logo from './Logo';
-import Button from '../Button';
-import User from './User';
-import Lang from './Lang';
-import { DrawerContext } from '../../contextApi/DrawerContext';
+import React, { useContext } from "react";
+import styled from "styled-components";
+import Logo from "./Logo";
+import Button from "../Button";
+import User from "./User";
+import Lang from "./Lang";
+import { DrawerContext } from "../../contextApi/DrawerContext";
 
 const Header = () => {
   const { setOpenDrawer } = useContext(DrawerContext);
@@ -27,6 +27,7 @@ const ContainerHeader = styled.div`
   padding: 0.5rem 1.2rem;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
+  height: 4.5rem;
 
   & > :first-child {
     display: block;
