@@ -1,11 +1,20 @@
 import Button from "../../components/Button";
+import axios from "axios";
 import StickyHeadTable from "../../components/Table";
-import category from "../../mocks/category/category.json";
 import SectionHeaderContainer from "../../components/SectionHeaderContainer";
-import { useState } from "react";
+import { getCategories } from "../../store/slices/CategorySlice";
+import { useContext, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 const Category = () => {
-  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
+  const rows = useSelector((state) => state.category.categories);
+  
+  useEffect(() => {
+    axios("http://127.0.0.1:5500/src/mocks/category/category.json").then(
+      (response) => dispatch(getCategories(response.data.categories))
+    );
+  }, [dispatch]);
 
   const handleClose = () => {
     setOpen(false);
@@ -20,7 +29,7 @@ const Category = () => {
         <h2>Category</h2>
         <Button onClick={handleOpen}>Add Category</Button>
       </SectionHeaderContainer>
-      <StickyHeadTable rows={category.categories} />;
+      {rows && <StickyHeadTable rows={rows} />}
     </>
   );
 };

@@ -11,7 +11,6 @@ export const restaurantSlice = createSlice({
     },
     addRestaurant: (state) => {
       state.restaurants.push(action.payload);
-      /* {[...state,action.payload]} */
     },
     deleteRestaurant: (state) => {
       state.restaurants = state.restaurants.filter((item) => item.id !== action.payload);

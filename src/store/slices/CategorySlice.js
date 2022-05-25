@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = { categories: [] };
 
 export const categorySlice = createSlice({
-  name: 'category',
+  name: "category",
   initialState,
   reducers: {
     getCategories: (state, action) => {
@@ -14,12 +14,15 @@ export const categorySlice = createSlice({
       /* {[...state,action.payload]} */
     },
     deleteCategory: (state) => {
-      state.categories = state.categories.filter((item) => item.id !== action.payload);
+      state.categories = state.categories.filter(
+        (item) => item.id !== action.payload
+      );
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { getProducts, addProduct, deleteProduct } = categorySlice.actions;
+export const { getCategories, addCategory, deleteCategory } =
+  categorySlice.actions;
 
 export default categorySlice.reducer;

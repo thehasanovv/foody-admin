@@ -1,20 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = { offers: [] };
 
 export const offerSlice = createSlice({
-  name: 'offer',
+  name: "offer",
   initialState,
   reducers: {
     getOffers: (state, action) => {
-      state.orders = action.payload;
+      state.offers = action.payload;
     },
     addOffer: (state) => {
-      state.orders.push(action.payload);
+      state.offers.push(action.payload);
       /* {[...state,action.payload]} */
     },
     deleteOffer: (state) => {
-      state.orders = state.orders.filter((item) => item.id !== action.payload);
+      state.offers = state.offers.filter((item) => item.id !== action.payload);
     },
   },
 });
