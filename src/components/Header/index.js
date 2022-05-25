@@ -8,10 +8,11 @@ import { DrawerContext } from '../../contextApi/DrawerContext';
 
 const Header = () => {
   const { setOpenDrawer } = useContext(DrawerContext);
+  console.log(setOpenDrawer);
   return (
     <ContainerHeader>
       <Logo />
-      <Button onClick={setOpenDrawer}>ADD PRODUCT</Button>
+      <Button onClick={() => setOpenDrawer(true)}>ADD PRODUCT</Button>
       <Lang />
       <User />
     </ContainerHeader>

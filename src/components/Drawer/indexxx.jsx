@@ -11,15 +11,7 @@ import {
 } from './DrawerStyle';
 import InputFile from '../InputFile';
 
-export const DrawerForm = ({
-  children,
-  title,
-  subTitle,
-  subTitle2,
-  initialValues,
-  validationSchema,
-  setIsOpen,
-}) => {
+export const DrawerForm = ({ children, title, initialValues, validationSchema }) => {
   const onSubmit = (values, { resetForm }) => {
     console.log(values);
   };
@@ -28,22 +20,16 @@ export const DrawerForm = ({
   return (
     <>
       <DrawerContainer>
-        {/* Title */}
         <DTitle>{title}</DTitle>
         {uploadImg && <img width="150" height="100" cover src={URL.createObjectURL(uploadImg)} />}
-
-        {/* ===================================================== */}
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={onSubmit}>
           {({ setFieldValue, resetForm }) => (
             <FormikForm>
-              {/* ===================================================== */}
-              {/* SubTitle */}
               <DSubContainer>
-                <DSubTitle>{subTitle}</DSubTitle>
-                {/* Subtitle content */}
+                <DSubTitle>Upload your image</DSubTitle>
                 <Panel>
                   <InputFile
                     setFieldValue={setFieldValue}
@@ -52,26 +38,15 @@ export const DrawerForm = ({
                   />
                 </Panel>
               </DSubContainer>
-              {/* ===================================================== */}
-              {/* SubTitle2 */}
               <DSubContainer>
-                <DSubTitle>{subTitle2}</DSubTitle>
-                {/* Subtitle content */}
+                <DSubTitle>Add your description and necessary information</DSubTitle>
                 <Panel>{children}</Panel>
               </DSubContainer>
-              {/* Buttons */}
-
               <DSubContainer>
-                <Button
-                  width={45}
-                  bgColor={'#3268a8'}
-                  onClick={() => {
-                    setIsOpen();
-                    resetForm();
-                  }}>
+                <Button width={45} bgColor={'#3268a8'} onClick={onSubmit}>
                   Cancel
                 </Button>
-                <Button type="submit" width={45}>
+                <Button  width={45} onClick={()=>resetForm()}>
                   Submit
                 </Button>
               </DSubContainer>
