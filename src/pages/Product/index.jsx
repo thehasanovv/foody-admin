@@ -8,7 +8,6 @@ import { DrawerContent } from '../../components/Drawer';
 import { DrawerContext } from '../../contextApi/DrawerContext';
 import { useContext, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Data from '../../components/Pagination/Data';
 
 const Products = () => {
   const { setOpenDrawer } = useContext(DrawerContext);
@@ -34,7 +33,6 @@ const Products = () => {
       </SectionHeaderContainer>
       {/* Section Product Cards  */}
       {products && <ProductCards rm={deleteProduct} datas={products} />}
-      <Data val={products} />
     </>
   );
 };

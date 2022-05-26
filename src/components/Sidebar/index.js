@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import SidebarItem from "./SidebarItem";
+import { useTranslation } from "react-i18next";
 import {
   MdDashboard,
   MdOutlineProductionQuantityLimits,
@@ -21,15 +22,16 @@ const SidebarContainer = styled.div`
 `;
 
 const Sidebar = () => {
+  const { t } = useTranslation("translation", { keyPrefix: "menu" });
   return (
     //prettier-ignore
     <SidebarContainer>
-      <SidebarItem icon={<MdDashboard />} title="Dashboard" path="/" />
-      <SidebarItem icon={<MdOutlineProductionQuantityLimits />} title="Products" path="/products" />
-      <SidebarItem icon={<MdRestaurant />} title="Restaurants"  path="/restaurants" />
-      <SidebarItem icon={<MdCategory />} title="Category" path="/category" />
-      <SidebarItem icon={<MdOutlineReorder />} title="Orders" path="/orders" />
-      <SidebarItem icon={<MdLocalOffer />} title="Offers" path="/offers" />
+      <SidebarItem icon={<MdDashboard />} title={t("dashboard")} path="/panel" />
+      <SidebarItem icon={<MdOutlineProductionQuantityLimits />} title="Products" path="/panel/products" />
+      <SidebarItem icon={<MdRestaurant />} title="Restaurants"  path="/panel/restaurants" />
+      <SidebarItem icon={<MdCategory />} title="Category" path="/panel/category" />
+      <SidebarItem icon={<MdOutlineReorder />} title="Orders" path="/panel/orders" />
+      <SidebarItem icon={<MdLocalOffer />} title="Offers" path="/panel/offers" />
       <SidebarItem icon={<MdLogout />} title="Logout" path="/logout"/>
     </SidebarContainer>
   );
