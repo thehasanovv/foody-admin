@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import FormControl from "../Form/FormControl";
 import { SectionFormContext } from "../SectionFormContext";
 
-const RestaurantForm = ({ setIsOpen }) => {
+const RestaurantForm = () => {
   const options = [
     {
       id: "001",

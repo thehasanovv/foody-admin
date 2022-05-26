@@ -1,13 +1,12 @@
 import React from "react";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import { Field } from "formik";
 import { InputLabelMui } from "./FormStyled";
 import { SelectFieldMui, ContainerInput } from "./FormStyled";
 
-const SelectFormik = ({ name, label, options, ...rest }) => {
+const SelectFormik = ({ name, label, options }) => {
   return (
     <ContainerInput>
       <Field name={name}>

@@ -16,6 +16,7 @@ const Category = () => {
   const { setOpenDrawer } = useContext(DrawerContext);
 
   const dispatch = useDispatch();
+  
   const rows = useSelector((state) => state.category.categories);
 
   useEffect(() => {
