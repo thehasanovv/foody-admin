@@ -1,13 +1,11 @@
-import styled from 'styled-components';
-
-import { useTranslation } from 'react-i18next';
+import styled from "styled-components";
 
 const Btn = styled.button`
   /* background: ${({ theme }) => theme.bgPrimaryButton}; */
   color: ${({ theme }) => theme.cPrimaryButton};
   font-size: ${({ theme }) => theme.font.size.extraSmall};
-  width: ${({ width }) => (width ? `${width}%` : 'auto')};
-  background: ${({ bgColor }) => (bgColor ? bgColor : '#C035A2')};
+  width: ${({ width }) => (width ? `${width}%` : "auto")};
+  background: ${({ bgColor }) => (bgColor ? bgColor : "#C035A2")};
   padding: 0.5rem 2rem;
   border: none;
   border-radius: 0.87rem;
@@ -25,11 +23,9 @@ const Btn = styled.button`
 `;
 
 const Button = ({ children, width, ...rest }) => {
-  let { t } = useTranslation();
   return (
     <Btn width={width} {...rest}>
-      {children}
-      {t('no risk')}
+      {children.toUpperCase()}
     </Btn>
   );
 };

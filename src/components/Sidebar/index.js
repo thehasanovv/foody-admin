@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import SidebarItem from "./SidebarItem";
+import { useTranslation } from "react-i18next";
 import {
   MdDashboard,
   MdOutlineProductionQuantityLimits,
@@ -21,10 +22,11 @@ const SidebarContainer = styled.div`
 `;
 
 const Sidebar = () => {
+  const { t } = useTranslation("translation", { keyPrefix: "menu" });
   return (
     //prettier-ignore
     <SidebarContainer>
-      <SidebarItem icon={<MdDashboard />} title="Dashboard" path="/" />
+      <SidebarItem icon={<MdDashboard />} title={t("dashboard")} path="/" />
       <SidebarItem icon={<MdOutlineProductionQuantityLimits />} title="Products" path="/products" />
       <SidebarItem icon={<MdRestaurant />} title="Restaurants"  path="/restaurants" />
       <SidebarItem icon={<MdCategory />} title="Category" path="/category" />

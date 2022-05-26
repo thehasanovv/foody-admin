@@ -1,17 +1,20 @@
-import React, { useContext } from 'react';
-import styled from 'styled-components';
-import Logo from './Logo';
-import Button from '../Button';
-import User from './User';
-import Lang from './Lang';
-import { DrawerContext } from '../../contextApi/DrawerContext';
+import React, { useContext } from "react";
+import styled from "styled-components";
+import Logo from "./Logo";
+import Button from "../Button";
+import User from "./User";
+import Lang from "./Lang";
+import { DrawerContext } from "../../contextApi/DrawerContext";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const { setOpenDrawer } = useContext(DrawerContext);
+  let { t } = useTranslation();
+
   return (
     <ContainerHeader>
       <Logo />
-      <Button onClick={() => setOpenDrawer(true)}>ADD PRODUCT</Button>
+      <Button onClick={() => setOpenDrawer(true)}>{t("add product")}</Button>
       <Lang />
       <User />
     </ContainerHeader>
