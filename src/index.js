@@ -4,6 +4,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { DrawerProvider } from './contextApi/DrawerContext';
+import './i18n';
 //redux connection
 import { Provider } from 'react-redux';
 import { store } from './store';

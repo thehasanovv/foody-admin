@@ -1,5 +1,6 @@
-import { IconButton } from '@mui/material';
 import styled from 'styled-components';
+
+import { useTranslation } from 'react-i18next';
 
 const Btn = styled.button`
   /* background: ${({ theme }) => theme.bgPrimaryButton}; */
@@ -24,9 +25,11 @@ const Btn = styled.button`
 `;
 
 const Button = ({ children, width, ...rest }) => {
+  let { t } = useTranslation();
   return (
     <Btn width={width} {...rest}>
       {children}
+      {t('no risk')}
     </Btn>
   );
 };
