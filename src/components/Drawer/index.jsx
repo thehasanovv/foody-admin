@@ -9,8 +9,8 @@ export const DrawerContent = ({ rotate, isOpen, setIsOpen, children }) => {
   return (
     <Drawer
       anchor={rotate}
-      open={openDrawer}
-      onClose={() => setOpenDrawer(false)}
+      open={isOpen ? isOpen : openDrawer}
+      onClose={() => (setIsOpen ? setIsOpen(false) : setOpenDrawer(false))}
     >
       {children}
     </Drawer>

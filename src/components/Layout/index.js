@@ -1,8 +1,8 @@
-import { Col, Container, Row } from "reactstrap";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 import Login from "../../pages/Login";
 import { useLocation } from "react-router-dom";
+import { Col, Container, Row } from "reactstrap";
 
 const Layout = ({ children }) => {
   let { pathname } = useLocation();

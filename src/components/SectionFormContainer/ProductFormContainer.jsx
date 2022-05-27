@@ -1,45 +1,45 @@
 import React from "react";
 import * as Yup from "yup";
 import FormControl from "../Form/FormControl";
-import { SectionFormContext } from "../SectionFormContext";
-
-const options = [
-  {
-    id: "001",
-    title: "MC Donalds",
-    value: "mcDonalds",
-  },
-  {
-    id: "002",
-    title: "Papa John's",
-    value: "papaJohns",
-  },
-  {
-    id: "003",
-    title: "Burger King",
-    value: "burgerKing",
-  },
-];
+import { SectionFormContent } from "../SectionFormContent";
 
 const ProductsForm = () => {
+  const options = [
+    {
+      id: "004",
+      title: "MC Donalds",
+      value: "mcDonalds",
+    },
+    {
+      id: "005",
+      title: "Papa John's",
+      value: "papaJohns",
+    },
+    {
+      id: "006",
+      title: "Burger King",
+      value: "burgerKing",
+    },
+  ];
+
   const initialValues = {
     img: "",
     name: "",
     description: "",
     price: "",
-    rest: "",
+    restaurant: "",
   };
 
   const validationSchema = Yup.object({
     name: Yup.string().required("Required"),
     description: Yup.string().required("Required"),
     price: Yup.string().required("Required"),
-    rest: Yup.string().required("Required"),
+    restaurant: Yup.string().required("Required"),
   });
 
   return (
     <div>
-      <SectionFormContext
+      <SectionFormContent
         title="Add Product"
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -69,10 +69,10 @@ const ProductsForm = () => {
         <FormControl
           control="select"
           label="Restuarants"
-          name="rest"
+          name="restaurant"
           options={options}
         />
-      </SectionFormContext>
+      </SectionFormContent>
     </div>
   );
 };

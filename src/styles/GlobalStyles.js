@@ -16,15 +16,13 @@ export const GlobalStyles = createGlobalStyle`
         color:${({ theme }) => theme.text};
         transition:all 0.3s linear;
         font-family:'Roboto', sans-serif;
+
     }
     
     a{
       text-decoration: none;
     }
-    .isActive {
-      background: ${(props) => props.theme.bgSidebarHover};
-    }
-    
+
     .btn-primary{
         background:${({ theme }) => theme.primary};
         color:${({ theme }) => theme.body};

@@ -1,7 +1,7 @@
 import React from "react";
 import * as Yup from "yup";
 import FormControl from "../Form/FormControl";
-import { SectionFormContext } from "../SectionFormContext";
+import { SectionFormContent } from "../SectionFormContent";
 
 const CategoryForm = ({ setIsOpen }) => {
   const initialValues = {
@@ -18,7 +18,7 @@ const CategoryForm = ({ setIsOpen }) => {
 
   return (
     <div>
-      <SectionFormContext
+      <SectionFormContent
         title="Add Product"
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -37,7 +37,7 @@ const CategoryForm = ({ setIsOpen }) => {
           name="slug"
           variant="outlined"
         />
-      </SectionFormContext>
+      </SectionFormContent>
     </div>
   );
 };

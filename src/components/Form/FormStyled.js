@@ -1,5 +1,4 @@
 import { TextField } from "@mui/material";
-import { Field } from "formik";
 import Select from "@mui/material/Select";
 import styled from "styled-components";
 import InputLabel from "@mui/material/InputLabel";
@@ -9,7 +8,6 @@ export const ContainerInput = styled.div`
   width: 100%;
 `;
 
-export const FormField = styled(Field)``;
 
 export const TextFieldMui = styled(TextField)`
   & .MuiOutlinedInput-root {

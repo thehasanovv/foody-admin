@@ -1,18 +1,15 @@
 import axios from "axios";
-import Button from "../../components/Button";
 import ProductCards from "../../components/Cards/ProductCards";
-import ProductFormContainer from "../../components/SectionFormContainer/ProductFormContainer";
 import SectionHeaderContainer from "../../components/SectionHeaderContainer";
-import { getProducts, deleteProduct } from "../../store/slicers/ProductSlice";
-import { DrawerContent } from "../../components/Drawer";
-import { DrawerContext } from "../../contextApi/DrawerContext";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
+import { getProducts, deleteProduct } from "../../store/slicers/ProductSlice";
 
 const Products = () => {
-  const { setOpenDrawer } = useContext(DrawerContext);
-  const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);
+  const { t } = useTranslation("translation");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     axios("http://127.0.0.1:5500/src/mocks/product/product.json").then(
@@ -22,14 +19,9 @@ const Products = () => {
 
   return (
     <>
-      {/* Section Form Drawer  */}
-      <DrawerContent rotate="right">
-        <ProductFormContainer />
-      </DrawerContent>
       {/* Section Header  */}
       <SectionHeaderContainer>
-        <h2>Products</h2>
-        <Button onClick={setOpenDrawer.bind(null, true)}>Add Products</Button>
+        <h2>{t("menu.products")}</h2>
       </SectionHeaderContainer>
       {/* Section Product Cards  */}
       {products && <ProductCards rm={deleteProduct} datas={products} />}

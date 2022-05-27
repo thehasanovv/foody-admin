@@ -14,7 +14,7 @@ i18n.use(initReactI18next).init({
     az,
   },
 
-  lng: defaultLang || "az",
+  lng: defaultLang || "en",
 
   interpolation: {
     escapeValue: false,

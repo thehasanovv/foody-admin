@@ -27,12 +27,12 @@ const Sidebar = () => {
     //prettier-ignore
     <SidebarContainer>
       <SidebarItem icon={<MdDashboard />} title={t("dashboard")} path="/" />
-      <SidebarItem icon={<MdOutlineProductionQuantityLimits />} title="Products" path="/products" />
-      <SidebarItem icon={<MdRestaurant />} title="Restaurants"  path="/restaurants" />
-      <SidebarItem icon={<MdCategory />} title="Category" path="/category" />
-      <SidebarItem icon={<MdOutlineReorder />} title="Orders" path="/orders" />
-      <SidebarItem icon={<MdLocalOffer />} title="Offers" path="/offers" />
-      <SidebarItem icon={<MdLogout />} title="Logout" path="/logout"/>
+      <SidebarItem icon={<MdOutlineProductionQuantityLimits />} title={t("products")} path="/products" />
+      <SidebarItem icon={<MdRestaurant />} title={t("restaurants")}  path="/restaurants" />
+      <SidebarItem icon={<MdCategory />} title={t("category")} path="/category" />
+      <SidebarItem icon={<MdOutlineReorder />} title={t("orders")} path="/orders" />
+      <SidebarItem icon={<MdLocalOffer />} title={t("offers")} path="/offers" />
+      <SidebarItem icon={<MdLogout />} title={t("logout")} path="/logout"/>
     </SidebarContainer>
   );
 };

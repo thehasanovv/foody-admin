@@ -6,23 +6,26 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const Lang = () => {
-  const { i18n } = useTranslation();
-
   const [anchorEl, setAnchorEl] = useState(null);
   const [flag, setFlag] = useState("en");
   const open = Boolean(anchorEl);
+  const { i18n } = useTranslation();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
   useEffect(() => {
-    i18n.changeLanguage(flag);
-  }, [flag]);
+    let lang = localStorage.getItem("lang") || "en";
+    setFlag(lang);
+    i18n.changeLanguage(lang);
+  }, [flag, i18n]);
 
   const handleClose = (flag) => {
-    if (flag === "az" || flag === "en" || flag === "fr") setFlag(flag);
-    localStorage.setItem("lang", flag);
+    if (flag === "az" || flag === "en" || flag === "fr") {
+      setFlag(flag);
+      localStorage.setItem("lang", flag);
+    }
     setAnchorEl(null);
   };
   return (
@@ -60,5 +63,4 @@ const Lang = () => {
   );
 };
 
-const ContainerLang = styled.div``;
 export default Lang;

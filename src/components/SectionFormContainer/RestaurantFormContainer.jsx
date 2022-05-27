@@ -1,7 +1,7 @@
 import React from "react";
 import * as Yup from "yup";
 import FormControl from "../Form/FormControl";
-import { SectionFormContext } from "../SectionFormContext";
+import { SectionFormContent } from "../SectionFormContent";
 
 const RestaurantForm = () => {
   const options = [
@@ -46,7 +46,7 @@ const RestaurantForm = () => {
 
   return (
     <div>
-      <SectionFormContext
+      <SectionFormContent
         title="Add Product"
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -99,7 +99,7 @@ const RestaurantForm = () => {
           name="slug"
           variant="outlined"
         />
-      </SectionFormContext>
+      </SectionFormContent>
     </div>
   );
 };

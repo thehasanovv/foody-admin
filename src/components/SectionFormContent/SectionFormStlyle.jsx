@@ -56,7 +56,7 @@ export const DSubContainer = styled(Box)`
 export const DSubTitle = styled(List)`
   width: 30%;
   color: ${({ theme }) => theme.text};
-  font-size: 18px; //bunu hell etmek global fonts goturmesi ucun
+  font-size: ${({ theme }) => theme.font.size.medium};
   font-weight: 400; //bunu hell etmek global fonts goturmesi ucun
 `;
 /* ============================== */
