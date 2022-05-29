@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { MdDeleteForever } from "react-icons/md";
+import { IconButton } from "@mui/material";
 
 export const CardsContainer = styled.div`
   display: grid;
@@ -11,11 +12,17 @@ export const CardsContainer = styled.div`
 export const CardContainer = styled.div`
   position: relative;
   display: flex;
-  /* justify-content: center; */
   border-radius: 7px;
   background: ${({ theme }) => theme.bgCard};
   box-shadow: ${({ theme }) => theme.Cardshadow};
   padding: ${({ theme }) => theme.boxModel.padding.small};
+  outline: 2px solid transparent;
+  transition: all 0.2s linear;
+
+  &:hover {
+    outline-color: ${({ theme }) => theme.colors.lightPurple_3};
+    transform: translateY(-1.1%);
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -41,6 +48,7 @@ export const ProductTitle = styled.h6`
   font-style: normal;
   font-weight: 500;
   letter-spacing: 0.01em;
+  white-space: nowrap;
 `;
 
 export const RestaurantName = styled.div`
@@ -50,11 +58,14 @@ export const RestaurantName = styled.div`
   letter-spacing: 0.01em;
 `;
 
+export const IconButtonMui = styled(IconButton)`
+  cursor: pointer;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+`;
+
 export const Button = styled(MdDeleteForever)`
   color: ${({ theme }) => theme.colors.lightRed};
   font-size: ${({ theme }) => theme.font.size.large};
-  cursor: pointer;
-  position: absolute;
-  top: 11%;
-  right: 5%;
 `;

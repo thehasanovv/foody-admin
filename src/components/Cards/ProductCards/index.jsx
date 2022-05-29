@@ -1,6 +1,6 @@
-import React from 'react';
-import ProductCard from './ProductCard';
-import { CardsContainer } from './ProductCardStyle';
+import React from "react";
+import ProductCard from "./ProductCard";
+import { CardsContainer } from "./ProductCardStyle";
 
 const ProductCards = ({ datas, rm }) => {
   return (

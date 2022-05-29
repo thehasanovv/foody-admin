@@ -19,6 +19,13 @@ export const CardContainer = styled.div`
   background: ${({ theme }) => theme.bgCard};
   box-shadow: ${({ theme }) => theme.Cardshadow};
   padding: ${({ theme }) => theme.boxModel.padding.small};
+  outline: 2px solid transparent;
+  transition: all 0.2s linear;
+
+  &:hover {
+    outline-color: ${({ theme }) => theme.colors.lightPurple_3};
+    transform: translateY(-1%);
+  }
 `;
 
 export const ImageContainer = styled.div`

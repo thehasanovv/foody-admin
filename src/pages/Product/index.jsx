@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts, deleteProduct } from "../../store/slicers/ProductSlice";
+import productsMock from "../../mocks/product/product.json";
 
 const Products = () => {
   const products = useSelector((state) => state.product.products);
