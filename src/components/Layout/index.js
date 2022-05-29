@@ -3,12 +3,13 @@ import Sidebar from "../Sidebar";
 import Login from "../../pages/Login";
 import { useLocation } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-
+import { ModalContent } from "../Modal";
 const Layout = ({ children }) => {
   let { pathname } = useLocation();
 
   return (
     <>
+      <ModalContent />
       {pathname !== "/logout" ? (
         <Container>
           <Row>
