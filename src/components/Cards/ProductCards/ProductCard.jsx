@@ -28,8 +28,8 @@ const ProductCard = ({ name, price, restaurant, img_url, id, rm }) => {
         <RestaurantName>{restaurant}</RestaurantName>
         <SubContainer>
           <Price>$ {price}</Price>
-          <IconButton>
-            <Button onClick={() => handleDelete(id)} />
+          <IconButton onClick={() => handleDelete(id)}>
+            <Button />
           </IconButton>
         </SubContainer>
       </CartBody>

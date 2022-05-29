@@ -16,6 +16,7 @@ import { IconButtonMui } from "./RestaurantCardStyle";
 const BCard = (props) => {
   const dispatch = useDispatch();
   const { id, name, category, img_url, rm } = props;
+  
   const handleDelete = (id) => {
     dispatch(rm(id));
   };
