@@ -18,6 +18,7 @@ export const CardContainer = styled.div`
   padding: ${({ theme }) => theme.boxModel.padding.small};
   outline: 2px solid transparent;
   transition: all 0.2s linear;
+  height: 4.7rem;
 
   &:hover {
     outline-color: ${({ theme }) => theme.colors.lightPurple_3};

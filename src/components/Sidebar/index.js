@@ -1,15 +1,4 @@
-import styled from 'styled-components';
-import SidebarItem from './SidebarItem';
-import { useTranslation } from 'react-i18next';
-import {
-  MdDashboard,
-  MdOutlineProductionQuantityLimits,
-  MdRestaurant,
-  MdCategory,
-  MdOutlineReorder,
-  MdLocalOffer,
-  MdLogout,
-} from 'react-icons/md';
+import styled from "styled-components";
 import SidebarItems from "./SidebarItems";
 
 const SidebarContainer = styled.div`
@@ -26,24 +15,11 @@ const SidebarContainer = styled.div`
   }
 `;
 
-const SidebarToggleContainer = styled.div`
-  display: none;
-
-  @media screen and (max-width: 992px) {
-    display: block;
-  }
-`;
-
 const Sidebar = () => {
   return (
-    <>
-      <SidebarContainer>
-        <SidebarItems />
-      </SidebarContainer>
-      <SidebarToggleContainer>
-        <SidebarItems />
-      </SidebarToggleContainer>
-    </>
+    <SidebarContainer>
+      <SidebarItems />
+    </SidebarContainer>
   );
 };
 

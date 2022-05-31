@@ -12,7 +12,7 @@ const SidebarItem = ({ icon, title, path }) => {
 
 export default SidebarItem;
 
-const SidebarItemContainer = styled(NavLink)`
+export const SidebarItemContainer = styled(NavLink)`
   width: 80%;
   display: flex;
   align-items: center;
@@ -22,6 +22,7 @@ const SidebarItemContainer = styled(NavLink)`
   cursor: pointer;
   margin: 0 auto;
   transition: all 0.3s linear;
+
   &.active {
     background: ${(props) => props.theme.bgSidebarHover};
   }

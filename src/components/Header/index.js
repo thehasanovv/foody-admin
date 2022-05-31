@@ -4,13 +4,14 @@ import Button from "../Button";
 import User from "./User";
 import Lang from "./Lang";
 import ProductFormContainer from "../SectionFormContainer/ProductFormContainer";
-import Sidebar from "../Sidebar";
+import SidebarToggleMenu from "../Sidebar/SidebarToggleMenu";
 import { useContext } from "react";
 import { DrawerContext } from "../../contextApi/DrawerContext";
 import { useTranslation } from "react-i18next";
 import { DrawerContent } from "../Drawer";
 import { RiMenuAddFill } from "react-icons/ri";
 import { IconButton } from "@mui/material";
+
 const Header = () => {
   const {
     openProductDrawer,
@@ -37,7 +38,7 @@ const Header = () => {
         isOpen={openMenuDrawer}
         setIsOpen={setOpenMenuDrawer}
       >
-        <Sidebar />
+        <SidebarToggleMenu />
       </DrawerContent>
 
       <ContainerHeader>
@@ -64,7 +65,6 @@ const ContainerHeader = styled.div`
   justify-content: flex-end;
   align-items: center;
   background: ${({ theme }) => theme.primary};
-
   padding: 0.5rem 1.2rem;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
@@ -74,6 +74,10 @@ const ContainerHeader = styled.div`
     display: flex;
     margin-right: auto;
     align-items: center;
+  }
+
+  & svg {
+    color: white;
   }
 `;
 
