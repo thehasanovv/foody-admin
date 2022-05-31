@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { Box, List, Tag, ListItem, Divider } from '@chakra-ui/core';
-import { Pagination } from '@material-ui/lab';
-import usePagination from './Pagination';
-export default function Pagi({ data }) {
+import PageControl from "./PageControl";
+import usePagination from "./Pagination";
+import { useState } from "react";
+import { Pagination } from "@material-ui/lab";
+
+export default function Pagi({ data, comp }) {
   let [page, setPage] = useState(1);
   const PER_PAGE = 5;
   const count = Math.ceil(data.length / PER_PAGE);
@@ -12,9 +13,11 @@ export default function Pagi({ data }) {
     setPage(p);
     _DATA.jump(p);
   };
+  const datas = _DATA.currentData();
 
   return (
-    <Box p="5">
+    <>
+      <PageControl comp={comp} datas={datas} />
       <Pagination
         count={count}
         size="large"
@@ -23,29 +26,6 @@ export default function Pagi({ data }) {
         shape="rounded"
         onChange={handleChange}
       />
-
-      <List p="10" pt="3" spacing={2}>
-        {_DATA.currentData().map((v) => {
-          return (
-            <ListItem key={v.id} listStyleType="disc">
-              <span>{v.sku}</span> <Divider display="inline" orientation="vertical" />
-              <span> {v.category_type}</span> <Divider display="inline" orientation="vertical" />
-              <span>
-                <Tag color="#0f4211">${v.msrp}</Tag>
-              </span>
-            </ListItem>
-          );
-        })}
-      </List>
-
-      <Pagination
-        count={count}
-        size="large"
-        page={page}
-        variant="outlined"
-        shape="rounded"
-        onChange={handleChange}
-      />
-    </Box>
+    </>
   );
 }

@@ -1,5 +1,5 @@
 import Button from "../../components/Button";
-import RestaurantCards from "../../components/Cards/RestaurantCards";
+import Pagi from "../../components/Pagination";
 import RestaurantFormContainer from "../../components/SectionFormContainer/RestaurantFormContainer";
 import SectionHeaderContainer from "../../components/SectionHeaderContainer";
 import { useContext, useEffect } from "react";
@@ -7,7 +7,6 @@ import { DrawerContent } from "../../components/Drawer";
 import { DrawerContext } from "../../contextApi/DrawerContext";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteRestaurant } from "../../store/slicers/RestaurantSlice";
 import { fetchRestaurantData } from "../../store/actions/restaurantActions";
 
 const Restaurants = () => {
@@ -34,9 +33,7 @@ const Restaurants = () => {
         </Button>
       </SectionHeaderContainer>
       {/* Section Product Cards  */}
-      {restaurants && (
-        <RestaurantCards rm={deleteRestaurant} datas={restaurants} />
-      )}
+      <Pagi data={restaurants} comp={"restaurant"} />
     </>
   );
 };
