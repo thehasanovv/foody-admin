@@ -10,7 +10,7 @@ import {
   ModalButtonAccept,
 } from "./ModalStyled";
 
-export const ModalContent = ({ title, subtitle, modalOpen }) => {
+export const ModalContent = ({ title, subtitle }) => {
   const [open, setOpen] = React.useState(false);
   const { t } = useTranslation();
 
@@ -30,8 +30,8 @@ export const ModalContent = ({ title, subtitle, modalOpen }) => {
       aria-describedby="parent-modal-description"
     >
       <ModalBody>
-        <ModalTitle>{t("title delete")}</ModalTitle>
-        <ModalSubTitle>{t("subtitle product delete")}</ModalSubTitle>
+        <ModalTitle>{title}</ModalTitle>
+        <ModalSubTitle>{subtitle}</ModalSubTitle>
         <ModalButtonGroup>
           <ModalButtonCancel onClick={handleClose}>
             {t("cancel")}

@@ -4,9 +4,6 @@ const Pagination = ({ data, loading }) => {
   if (loading) {
     return <div>Loading...</div>;
   }
-  return (
-    
-  )
 };
 
 export default Pagination;

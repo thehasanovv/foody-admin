@@ -10,7 +10,7 @@ const SectionHeader = styled.div`
   justify-content: space-between;
   padding: 0 1rem;
   height: 73px;
-  background: #27283c;
+  background: ${({ theme }) => theme.primary};
   border-radius: 14px;
   margin-bottom: 1rem;
 
@@ -19,6 +19,7 @@ const SectionHeader = styled.div`
     font-size: 20px;
     letter-spacing: 0.01em;
     color: #c7c7c7;
+    color: ${({ theme }) => theme.text};
   }
 `;
 

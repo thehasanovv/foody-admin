@@ -5,6 +5,7 @@ export const DrawerContext = createContext(false);
 export const DrawerProvider = ({ children }) => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openProductDrawer, setOpenProductDrawer] = useState(false);
+  const [openMenuDrawer, setOpenMenuDrawer] = useState(false);
 
   return (
     <DrawerContext.Provider
@@ -13,6 +14,8 @@ export const DrawerProvider = ({ children }) => {
         setOpenDrawer,
         openProductDrawer,
         setOpenProductDrawer,
+        openMenuDrawer,
+        setOpenMenuDrawer,
       }}
     >
       {children}

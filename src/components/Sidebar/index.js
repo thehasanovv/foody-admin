@@ -10,30 +10,41 @@ import {
   MdLocalOffer,
   MdLogout,
 } from 'react-icons/md';
+import styled from "styled-components";
+import SidebarItems from "./SidebarItems";
 
 const SidebarContainer = styled.div`
   width: 90%;
   height: 450px;
   background: ${({ theme }) => theme.bgSidebar};
-  color: ${(props) => props.theme.cSidebarText};
+  color: ${({ theme }) => theme.cSidebarText};
   border-radius: 0.7rem;
   padding: 1.5rem 0;
   text-decoration: none !important;
+
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+`;
+
+const SidebarToggleContainer = styled.div`
+  display: none;
+
+  @media screen and (max-width: 992px) {
+    display: block;
+  }
 `;
 
 const Sidebar = () => {
-  const { t } = useTranslation('translation', { keyPrefix: 'menu' });
   return (
-    //prettier-ignore
-    <SidebarContainer>
-      <SidebarItem icon={<MdDashboard />} title={t("dashboard")} path="/panel" />
-      <SidebarItem icon={<MdOutlineProductionQuantityLimits />} title={t("products")} path="/panel/products" />
-      <SidebarItem icon={<MdRestaurant />} title={t("restaurants")}  path="/panel/restaurants" />
-      <SidebarItem icon={<MdCategory />} title={t("category")} path="/panel/category" />
-      <SidebarItem icon={<MdOutlineReorder />} title={t("orders")} path="/panel/orders" />
-      <SidebarItem icon={<MdLocalOffer />} title={t("offers")} path="/panel/offers" />
-      <SidebarItem icon={<MdLogout />} title={t("logout")} path="/logout"/>
-    </SidebarContainer>
+    <>
+      <SidebarContainer>
+        <SidebarItems />
+      </SidebarContainer>
+      <SidebarToggleContainer>
+        <SidebarItems />
+      </SidebarToggleContainer>
+    </>
   );
 };
 

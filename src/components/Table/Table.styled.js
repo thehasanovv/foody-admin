@@ -11,6 +11,7 @@ export const PaperStyled = styled(Paper)`
   }
 `;
 export const TableContainerStyled = styled(TableContainer)`
+
   max-height: 440px;
   svg {
     fill: ${({ theme }) => theme.colors.mainRed} !important;

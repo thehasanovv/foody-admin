@@ -18,10 +18,12 @@ const Layout = ({ children }) => {
             </Col>
           </Row>
           <Row style={{ marginTop: "2rem" }}>
-            <Col md={3}>
+            <Col md={0} lg={3}>
               <Sidebar />
             </Col>
-            <Col md={9}>{children}</Col>
+            <Col md={12} lg={9}>
+              {children}
+            </Col>
           </Row>
         </Container>
       ) : (

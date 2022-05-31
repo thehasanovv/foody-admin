@@ -28,7 +28,7 @@ const SidebarItemContainer = styled(NavLink)`
   &:hover {
     background: ${(props) => props.theme.bgSidebarHover};
     color: ${(props) => props.theme.cSidebarText};
-    border-radius: 0.5rem;
+    /* border-radius: 0.5rem; */
   }
 `;
 
