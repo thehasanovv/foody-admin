@@ -1,4 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import SidebarItem from './SidebarItem';
+import { useTranslation } from 'react-i18next';
+import {
+  MdDashboard,
+  MdOutlineProductionQuantityLimits,
+  MdRestaurant,
+  MdCategory,
+  MdOutlineReorder,
+  MdLocalOffer,
+  MdLogout,
+} from 'react-icons/md';
 import SidebarItems from "./SidebarItems";
 
 const SidebarContainer = styled.div`

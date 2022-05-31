@@ -9,15 +9,21 @@ import './i18n';
 import { Provider } from 'react-redux';
 import { store } from './store';
 
+//chakra
+import { ThemeProvider as ChakraProvider, CSSReset } from '@chakra-ui/core';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <DrawerProvider>
-        <Router>
-          <App />
-        </Router>
-      </DrawerProvider>
+      <ChakraProvider>
+        <DrawerProvider>
+          <Router>
+            <CSSReset />
+            <App />
+          </Router>
+        </DrawerProvider>
+      </ChakraProvider>
     </Provider>
   </React.StrictMode>,
 );

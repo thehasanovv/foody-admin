@@ -1,6 +1,7 @@
 import axios from "axios";
 import { getProducts } from "../../slicers/ProductSlice";
 
+
 export const fetchProductData = () => {
   return async (dispatch) => {
     try {

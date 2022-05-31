@@ -8,6 +8,7 @@ import az from "./lang/az/common.json";
 const defaultLang = localStorage.getItem("lang");
 
 i18n.use(initReactI18next).init({
+ 
   resources: {
     en,
     fr,
