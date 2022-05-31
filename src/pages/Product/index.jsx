@@ -5,9 +5,10 @@ import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteProduct } from "../../store/slicers/ProductSlice";
 import { fetchProductData } from "../../store/actions/productActions";
-// import productsMock from "../../mocks/product/product.json";
+import productsMock from "../../mocks/product/product.json";
 
 const Products = () => {
+  console.log(productsMock.products);
   const products = useSelector((state) => state.product.products);
   const { t } = useTranslation("translation");
   const dispatch = useDispatch();
