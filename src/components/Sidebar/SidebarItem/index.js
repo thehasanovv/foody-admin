@@ -1,9 +1,16 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { DrawerContext } from "../../../contextApi/DrawerContext";
 
 const SidebarItem = ({ icon, title, path }) => {
+  const { setOpenMenuDrawer } = useContext(DrawerContext);
+
   return (
-    <SidebarItemContainer to={path}>
+    <SidebarItemContainer
+      to={path}
+      onClick={setOpenMenuDrawer.bind(null, false)}
+    >
       <SidebarItemIcon>{icon}</SidebarItemIcon>
       <SidebarItemTitle>{title}</SidebarItemTitle>
     </SidebarItemContainer>

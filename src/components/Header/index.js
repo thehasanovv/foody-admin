@@ -11,35 +11,30 @@ import { useTranslation } from "react-i18next";
 import { DrawerContent } from "../Drawer";
 import { RiMenuAddFill } from "react-icons/ri";
 import { IconButton } from "@mui/material";
+import { SidebarDrawerContent } from "../Drawer/SidebarDrawer";
 
 const Header = () => {
-  const {
-    openProductDrawer,
-    setOpenProductDrawer,
-    openMenuDrawer,
-    setOpenMenuDrawer,
-  } = useContext(DrawerContext);
-  let { t } = useTranslation("translation");
+  const { t } = useTranslation("translation");
+  const { openProductDrawer, setOpenProductDrawer, setOpenMenuDrawer } =
+    useContext(DrawerContext);
 
   return (
     <>
       {/* Section Form Drawer  */}
-      <DrawerContent
-        rotate="right"
-        isOpen={openProductDrawer}
-        setIsOpen={setOpenProductDrawer}
-      >
-        <ProductFormContainer setIsOpen={setOpenProductDrawer} />
-      </DrawerContent>
+      {
+        <DrawerContent
+          rotate="right"
+          isOpen={openProductDrawer}
+          setIsOpen={setOpenProductDrawer}
+        >
+          <ProductFormContainer setIsOpen={setOpenProductDrawer} />
+        </DrawerContent>
+      }
 
       {/* Section Menu Drawer  */}
-      <DrawerContent
-        rotate="left"
-        isOpen={openMenuDrawer}
-        setIsOpen={setOpenMenuDrawer}
-      >
+      <SidebarDrawerContent rotate="left">
         <SidebarToggleMenu />
-      </DrawerContent>
+      </SidebarDrawerContent>
 
       <ContainerHeader>
         <div>

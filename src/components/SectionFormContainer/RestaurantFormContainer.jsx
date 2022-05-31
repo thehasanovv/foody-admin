@@ -2,8 +2,11 @@ import React from "react";
 import * as Yup from "yup";
 import FormControl from "../Form/FormControl";
 import { SectionFormContent } from "../SectionFormContent";
+import { useTranslation } from "react-i18next";
 
 const RestaurantForm = () => {
+  const { t } = useTranslation("translation");
+
   const options = [
     {
       id: "001",
@@ -47,7 +50,7 @@ const RestaurantForm = () => {
   return (
     <div>
       <SectionFormContent
-        title="Add Product"
+        title={t("add restaurant")}
         initialValues={initialValues}
         validationSchema={validationSchema}
       >

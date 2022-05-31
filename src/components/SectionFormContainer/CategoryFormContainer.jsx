@@ -2,8 +2,11 @@ import React from "react";
 import * as Yup from "yup";
 import FormControl from "../Form/FormControl";
 import { SectionFormContent } from "../SectionFormContent";
+import { useTranslation } from "react-i18next";
 
-const CategoryForm = ({ setIsOpen }) => {
+const CategoryForm = () => {
+  const { t } = useTranslation("translation");
+
   const initialValues = {
     img: "",
     name: "",
@@ -19,7 +22,7 @@ const CategoryForm = ({ setIsOpen }) => {
   return (
     <div>
       <SectionFormContent
-        title="Add Product"
+        title={t("add category")}
         initialValues={initialValues}
         validationSchema={validationSchema}
       >

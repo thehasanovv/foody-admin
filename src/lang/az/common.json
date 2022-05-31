@@ -1,12 +1,12 @@
 {
   "translation": {
     "Welcome to React": "React in18 xos Geldiz!",
-    "add product": "məhsul əlavə et",
-    "add restaurant": "restoran əlavə et",
-    "add category": "kateqoriya əlavə et",
+    "add product": "Məhsul əlavə et",
+    "add restaurant": "Restoran əlavə et",
+    "add category": "Kateqoriya əlavə et",
     "success_message": "Əməliyyat uğurludur!",
     "create": "yarat",
-    "add offer": "təklif əlavə et",
+    "add offer": "Təklif əlavə et",
     "title delete": "Silindiyinizə əminsinizmi?",
     "subtitle product delete": "Diqqət! Bu məhsulu silsəniz, geri qayıtmayacaq!",
     "subtitle restaurants delete": "Diqqət! Bu restoranı silsəniz, geri qayıtmayacaq!",

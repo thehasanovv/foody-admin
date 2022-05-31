@@ -8,7 +8,6 @@ export const ContainerInput = styled.div`
   width: 100%;
 `;
 
-
 export const TextFieldMui = styled(TextField)`
   & .MuiOutlinedInput-root {
     color: ${({ theme }) => theme.colors.grayText};

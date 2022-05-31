@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ChartBar } from '../../components/Chards/Bar';
-import { ChartDonut } from '../../components/Chards/Donut';
-import { ChartLine } from '../../components/Chards/Line';
+import React from "react";
+import styled from "styled-components";
+import { ChartBar } from "../../components/Chards/Bar";
+import { ChartDonut } from "../../components/Chards/Donut";
+import { ChartLine } from "../../components/Chards/Line";
 
 const Dashboard = () => {
   return (
@@ -31,26 +31,34 @@ const DashboardList = styled.div`
 `;
 
 const DashboardCardStyled = styled.div`
-  position: relative;
-  width: ${({ width }) => (width ? `${width}%` : '100%')};
   height: 472px;
-  background-color: ${({ theme }) => theme.bgDashboardCard};
+  position: relative;
   border-radius: 14px;
-  margin-bottom: 20px !important;
   padding: 20px !important;
-  margin-right: ${({ margin }) => (margin ? `${margin}px` : '0px')};
+  margin-bottom: 20px !important;
+  width: ${({ width }) => (width ? `${width}%` : "100%")};
+  background-color: ${({ theme }) => theme.bgDashboardCard};
+  margin-right: ${({ margin }) => (margin ? `${margin}px` : "0px")};
 
   @media screen and (max-width: 1200px) {
     width: 100%;
     margin-right: 0px;
   }
+
+  @media screen and (max-width: 576px) {
+    height: auto;
+  }
 `;
 
-const NotFoundTitle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 12%;
-  transform: translate (-50%, -50%);
+const NotFoundTitle = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  @media screen and (max-width: 576px) {
+    height: 300px !important;
+  }
 `;
 
 // const DashboardList = styled(Grid).attrs(() => ({

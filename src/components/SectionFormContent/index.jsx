@@ -1,8 +1,9 @@
 import Button from "../Button";
 import InputFile from "../InputFile";
 import { Formik } from "formik";
-import { useState, useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { DrawerContext } from "../../contextApi/DrawerContext";
+import { useState, useContext } from "react";
 import {
   DrawerContainer,
   DTitle,
@@ -18,10 +19,10 @@ export const SectionFormContent = ({
   initialValues,
   validationSchema,
 }) => {
-  const { setOpenDrawer } = useContext(DrawerContext);
-  const { openProductDrawer, setOpenProductDrawer } = useContext(DrawerContext);
-
   const [uploadImg, setUploadImg] = useState(null);
+  const { openProductDrawer, setOpenProductDrawer } = useContext(DrawerContext);
+  const { setOpenDrawer } = useContext(DrawerContext);
+  const { t } = useTranslation("translation");
 
   const onSubmit = (values, { resetForm }) => {
     console.log(values);
@@ -45,7 +46,7 @@ export const SectionFormContent = ({
           {({ setFieldValue, resetForm }) => (
             <FormikForm>
               <DSubContainer>
-                <DSubTitle>Upload your image</DSubTitle>
+                <DSubTitle>{t("form.upload title")}</DSubTitle>
                 {/* Subtitle content */}
                 <Panel>
                   <InputFile
@@ -56,9 +57,7 @@ export const SectionFormContent = ({
                 </Panel>
               </DSubContainer>
               <DSubContainer>
-                <DSubTitle>
-                  Add your description and necessary information
-                </DSubTitle>
+                <DSubTitle>{t("form.form title")}</DSubTitle>
                 {/* Subtitle content */}
                 <Panel>{children}</Panel>
               </DSubContainer>
@@ -73,10 +72,10 @@ export const SectionFormContent = ({
                     resetForm();
                   }}
                 >
-                  Cancel
+                  {t("cancel")}
                 </Button>
                 <Button type="submit" width={45}>
-                  Submit
+                  {t("submit")}
                 </Button>
               </DSubContainer>
             </FormikForm>

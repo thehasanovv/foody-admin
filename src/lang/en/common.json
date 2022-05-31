@@ -1,11 +1,11 @@
 {
     "translation": {
       "Welcome to React": "Welcome to React and react-i18next",
-      "add product": "add product",
-      "add restaurant": "add restaurant",
+      "add product": "Add product",
+      "add restaurant": "Add restaurant",
       "success_message": "The operation is successful!",
       "create product": "create",
-      "add category": "add category",
+      "add category": "Add category",
       "title delete": "Are you sure it’s deleted ?",
       "subtitle product delete": "Attention! If you delete this product, it will not come back...?",
       "subtitle restaurant delete": "Attention! If you delete this restaurant, it will not come back...?",
@@ -14,7 +14,7 @@
       "subtitle offer delete": "Attention! If you delete this offer, it will not come back...?",
       "delete": "delete",
       "cancel": "cancel",
-      "add offer": "add offer",
+      "add offer": "Add offer",
       "admin": "Admin",
       "no risk": "There are no risks assigned.",
       "menu": {
