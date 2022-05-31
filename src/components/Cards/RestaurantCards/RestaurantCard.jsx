@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   CardContainer,
   ImageContainer,
@@ -7,14 +7,16 @@ import {
   Button,
   Image,
   SecondCardContainer,
-} from './RestaurantCardStyle';
+} from "./RestaurantCardStyle";
 
-import { useDispatch } from 'react-redux';
-import { IconButton } from '@mui/material';
+import { useDispatch } from "react-redux";
+import { IconButton } from "@mui/material";
+import { IconButtonMui } from "./RestaurantCardStyle";
 
 const BCard = (props) => {
   const dispatch = useDispatch();
   const { id, name, category, img_url, rm } = props;
+  
   const handleDelete = (id) => {
     dispatch(rm(id));
   };
@@ -27,9 +29,9 @@ const BCard = (props) => {
         <ProductTitle>{name}</ProductTitle>
         <RestaurantName>{category}</RestaurantName>
       </SecondCardContainer>
-      <IconButton onClick={() => handleDelete(id)}>
+      <IconButtonMui onClick={() => handleDelete(id)}>
         <Button />
-      </IconButton>
+      </IconButtonMui>
     </CardContainer>
   );
 };

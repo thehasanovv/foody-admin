@@ -7,6 +7,7 @@ import { useContext, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { DrawerContent } from "../../components/Drawer";
 import { DrawerContext } from "../../contextApi/DrawerContext";
+import { useTranslation } from "react-i18next";
 import {
   getCategories,
   deleteCategory,
@@ -14,10 +15,9 @@ import {
 
 const Category = () => {
   const { setOpenDrawer } = useContext(DrawerContext);
-
   const dispatch = useDispatch();
-  
   const rows = useSelector((state) => state.category.categories);
+  const { t } = useTranslation("translation");
 
   useEffect(() => {
     axios("http://127.0.0.1:5500/src/mocks/category/category.json").then(
@@ -31,8 +31,10 @@ const Category = () => {
         <CategoryFormContainer />
       </DrawerContent>
       <SectionHeaderContainer>
-        <h2>Category</h2>
-        <Button onClick={setOpenDrawer.bind(null, true)}>Add Category</Button>
+        <h2>{t("menu.category")}</h2>
+        <Button onClick={setOpenDrawer.bind(null, true)}>
+          {t("add category")}
+        </Button>
       </SectionHeaderContainer>
       {rows && <StickyHeadTable rm={deleteCategory} rows={rows} />}
     </>

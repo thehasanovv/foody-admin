@@ -1,23 +1,37 @@
-import React, { useContext } from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
 import Button from "../Button";
 import User from "./User";
 import Lang from "./Lang";
+import { useContext } from "react";
 import { DrawerContext } from "../../contextApi/DrawerContext";
 import { useTranslation } from "react-i18next";
+import { DrawerContent } from "../Drawer";
+import ProductFormContainer from "../SectionFormContainer/ProductFormContainer";
 
 const Header = () => {
-  const { setOpenDrawer } = useContext(DrawerContext);
-  let { t } = useTranslation();
+  const { openProductDrawer, setOpenProductDrawer } = useContext(DrawerContext);
+  let { t } = useTranslation("translation");
 
   return (
-    <ContainerHeader>
-      <Logo />
-      <Button onClick={() => setOpenDrawer(true)}>{t("add product")}</Button>
-      <Lang />
-      <User />
-    </ContainerHeader>
+    <>
+      {/* Section Form Drawer  */}
+      <DrawerContent
+        rotate="right"
+        isOpen={openProductDrawer}
+        setIsOpen={setOpenProductDrawer}
+      >
+        <ProductFormContainer setIsOpen={setOpenProductDrawer} />
+      </DrawerContent>
+      <ContainerHeader>
+        <Logo />
+        <Button onClick={setOpenProductDrawer.bind(null, true)}>
+          {t("add product")}
+        </Button>
+        <Lang />
+        <User />
+      </ContainerHeader>
+    </>
   );
 };
 

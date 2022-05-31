@@ -12,13 +12,15 @@ import {
   FormikForm,
 } from "./SectionFormStlyle";
 
-export const SectionFormContext = ({
+export const SectionFormContent = ({
   children,
   title,
   initialValues,
   validationSchema,
 }) => {
   const { setOpenDrawer } = useContext(DrawerContext);
+  const { openProductDrawer, setOpenProductDrawer } = useContext(DrawerContext);
+
   const [uploadImg, setUploadImg] = useState(null);
 
   const onSubmit = (values, { resetForm }) => {
@@ -66,6 +68,7 @@ export const SectionFormContext = ({
                   bgColor={"#3268a8"}
                   width={45}
                   onClick={() => {
+                    openProductDrawer && setOpenProductDrawer(false);
                     setOpenDrawer(false);
                     resetForm();
                   }}

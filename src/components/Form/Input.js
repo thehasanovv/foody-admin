@@ -1,12 +1,11 @@
 import React from "react";
 import { Field } from "formik";
-import { FormField } from "./FormStyled";
 import { TextFieldMui, ContainerInput } from "./FormStyled";
 
 const Input = ({ name, ...rest }) => {
   return (
     <ContainerInput className="">
-      <FormField name={name}>
+      <Field name={name}>
         {({ field, form }) => (
           <TextFieldMui
             id={name}
@@ -19,7 +18,7 @@ const Input = ({ name, ...rest }) => {
             }
           />
         )}
-      </FormField>
+      </Field>
     </ContainerInput>
   );
 };
