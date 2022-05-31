@@ -16,7 +16,6 @@ export const GlobalStyles = createGlobalStyle`
         color:${({ theme }) => theme.text};
         transition:all 0.3s linear;
         font-family:'Roboto', sans-serif;
-
     }
     
     a{
@@ -58,8 +57,7 @@ export const fonts = {
 export const lightTheme = {
   body: "#fff",
   text: "#121212",
-  primary: "#6200ee",
-  bgSidebar: "#C74FEB",
+  primary: "#b4b4b4",
   bgSidebarHover: "#ce68ed",
   cSidebarText: "#FCDDEC",
   //primary button properties
@@ -67,9 +65,9 @@ export const lightTheme = {
   bgPrimaryButtonHover: "#c74feb",
   cPrimaryButton: "#000",
   //sidebar Icons text color
-  cSidebarText: "#fff",
-  bgSidebar: "#1e1e30",
-  bgSidebarHover: "#27283c",
+  cSidebarText: "#000",
+  bgSidebar: "#b4b4b4",
+  bgSidebarHover: "#f0f0f0",
   // table colors
   bgTable: "#000",
   cTableText: "#fff",
