@@ -10,7 +10,6 @@ import {
   MdLocalOffer,
   MdLogout,
 } from 'react-icons/md';
-import styled from "styled-components";
 import SidebarItems from "./SidebarItems";
 
 const SidebarContainer = styled.div`
