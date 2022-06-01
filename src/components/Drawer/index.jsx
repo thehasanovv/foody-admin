@@ -9,6 +9,7 @@ export const DrawerContent = ({ rotate, isOpen, setIsOpen, children }) => {
   return (
     <Drawer
       anchor={rotate}
+      disableScrollLock={true}
       open={isOpen ? isOpen : openDrawer}
       onClose={() => (setIsOpen ? setIsOpen(false) : setOpenDrawer(false))}
     >

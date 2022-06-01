@@ -33,7 +33,7 @@ const Restaurants = () => {
         </Button>
       </SectionHeaderContainer>
       {/* Section Product Cards  */}
-      <Pagi data={restaurants} comp={"restaurant"} />
+      <Pagi data={restaurants} comp={"restaurant"} per_page={4} />
     </>
   );
 };

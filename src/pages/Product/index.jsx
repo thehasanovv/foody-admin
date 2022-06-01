@@ -21,7 +21,7 @@ const Products = () => {
         <h2>{t("menu.products")}</h2>
       </SectionHeaderContainer>
       {/* Section Product Cards  */}
-      <Pagi data={products} comp={'product'} />
+      <Pagi data={products} comp={'product'} per_page={5}/>
     </>
   );
 };

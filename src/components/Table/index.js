@@ -114,6 +114,7 @@ function StickyHeadTable({ rows, rm }) {
             onPageChange={handleChangePage}
             rowsPerPageOptions={[10, 20, 100]}
             onRowsPerPageChange={handleChangeRowsPerPage}
+            SelectProps={{ native: true }}
           />
         </PaperStyled>
       )}

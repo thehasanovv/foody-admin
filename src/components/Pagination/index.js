@@ -3,9 +3,9 @@ import usePagination from "./Pagination";
 import { useState } from "react";
 import { PaginationContainer } from "./PaginationStyle";
 
-export default function Pagi({ data, comp }) {
+export default function Pagi({ data, comp, per_page }) {
   let [page, setPage] = useState(1);
-  const PER_PAGE = 5;
+  const PER_PAGE = per_page;
   const count = Math.ceil(data.length / PER_PAGE);
   const _DATA = usePagination(data, PER_PAGE);
 
