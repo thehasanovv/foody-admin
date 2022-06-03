@@ -6,6 +6,8 @@ export const DrawerProvider = ({ children }) => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openProductDrawer, setOpenProductDrawer] = useState(false);
   const [openMenuDrawer, setOpenMenuDrawer] = useState(false);
+  const [openDeleteModal, setOpenDeleteModal] = useState(false);
+  const [deleteProductModalID, setDeleteProductModalID] = useState("");
 
   return (
     <DrawerContext.Provider
@@ -16,6 +18,10 @@ export const DrawerProvider = ({ children }) => {
         setOpenProductDrawer,
         openMenuDrawer,
         setOpenMenuDrawer,
+        openDeleteModal,
+        setOpenDeleteModal,
+        deleteProductModalID,
+        setDeleteProductModalID,
       }}
     >
       {children}

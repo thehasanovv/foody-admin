@@ -25,7 +25,7 @@ const Btn = styled.button`
 const Button = ({ children, width, ...rest }) => {
   return (
     <Btn width={width} {...rest}>
-      {children.toUpperCase()}
+      {children}
     </Btn>
   );
 };

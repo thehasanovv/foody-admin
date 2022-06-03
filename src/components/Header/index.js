@@ -45,9 +45,10 @@ const Header = () => {
           </SidebarIcon>
           <Logo />
         </div>
-        <Button onClick={setOpenProductDrawer.bind(null, true)}>
-          {t("add product")}
-        </Button>
+        <HeaderButton onClick={setOpenProductDrawer.bind(null, true)}>
+          <span>{t("add product")}</span>
+          <span>{"+"}</span>
+        </HeaderButton>
         <Lang />
         <User />
       </ContainerHeader>
@@ -78,12 +79,33 @@ const ContainerHeader = styled.div`
 
 const SidebarIcon = styled.div`
   display: none;
-  margin-right: 1rem;
+  margin-left: -1rem;
   font-size: 1.33rem;
   margin-bottom: 5px;
 
   @media screen and (max-width: 992px) {
     display: block;
+  }
+`;
+
+const HeaderButton = styled(Button)`
+  & span:nth-child(2) {
+    display: none;
+  }
+
+  @media screen and (max-width: 576px) {
+    padding: 0;
+    border-radius: 50%;
+    width: 2.7rem;
+    height: 2.7rem;
+
+    & span:first-child {
+      display: none;
+    }
+
+    & span:nth-child(2) {
+      display: block;
+    }
   }
 `;
 

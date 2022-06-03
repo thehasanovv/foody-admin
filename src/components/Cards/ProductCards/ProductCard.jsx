@@ -1,4 +1,7 @@
 import React from "react";
+import { IconButton } from "@mui/material";
+import { useContext } from "react";
+import { DrawerContext } from "../../../contextApi/DrawerContext";
 import {
   CardContainer,
   ImageContainer,
@@ -10,14 +13,16 @@ import {
   Image,
   CartBody,
 } from "./ProductCardStyle";
-import { useDispatch } from "react-redux";
-import { IconButton } from "@mui/material";
 
-const ProductCard = ({ name, price, restaurant, img_url, id, rm }) => {
-  const dispatch = useDispatch();
-  const handleDelete = (pid) => {
-    dispatch(rm(pid));
+const ProductCard = ({ name, price, restaurant, img_url, id }) => {
+  const { setOpenDeleteModal, setDeleteProductModalID } =
+    useContext(DrawerContext);
+
+  const handleDelete = (id) => {
+    setOpenDeleteModal(true);
+    setDeleteProductModalID(id);
   };
+
   return (
     <CardContainer>
       <ImageContainer>

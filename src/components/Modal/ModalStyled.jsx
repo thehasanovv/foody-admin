@@ -26,6 +26,7 @@ export const ModalTitle = styled.h2`
   line-height: 24px;
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 `;
 
 export const ModalSubTitle = styled.p`
@@ -34,13 +35,13 @@ export const ModalSubTitle = styled.p`
   font-size: 18px;
   line-height: 24px;
   color: #4f4f4f;
+  margin-bottom: 1rem;
 `;
 
 export const ModalButtonGroup = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
 `;
 
 export const ModalButtonCancel = styled.button`

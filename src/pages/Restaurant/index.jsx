@@ -8,6 +8,8 @@ import { DrawerContext } from "../../contextApi/DrawerContext";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchRestaurantData } from "../../store/actions/restaurantActions";
+import { ModalContent } from "../../components/Modal";
+import { deleteRestaurant } from "../../store/slicers/RestaurantSlice";
 
 const Restaurants = () => {
   const restaurants = useSelector((state) => state.restaurant.restaurants);
@@ -21,6 +23,11 @@ const Restaurants = () => {
 
   return (
     <>
+      <ModalContent
+        title={t("title delete")}
+        subtitle={t("subtitle restaurant delete")}
+        rm={deleteRestaurant}
+      />
       {/* Section Form Drawer  */}
       <DrawerContent rotate="right">
         <RestaurantFormContainer />

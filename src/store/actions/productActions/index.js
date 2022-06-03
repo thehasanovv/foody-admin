@@ -1,7 +1,6 @@
 import axios from "axios";
 import { getProducts } from "../../slicers/ProductSlice";
 
-
 export const fetchProductData = () => {
   return async (dispatch) => {
     try {
@@ -10,8 +9,6 @@ export const fetchProductData = () => {
       );
 
       dispatch(getProducts(response.data.products));
-    } catch (error) {
-      //   console.log("error message", error);
-    }
+    } catch (error) {}
   };
 };

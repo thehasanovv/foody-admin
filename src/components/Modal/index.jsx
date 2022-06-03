@@ -1,6 +1,9 @@
 import * as React from "react";
 import Modal from "@mui/material/Modal";
+import { useContext } from "react";
+import { DrawerContext } from "../../contextApi/DrawerContext";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 import {
   ModalBody,
   ModalTitle,
@@ -10,24 +13,29 @@ import {
   ModalButtonAccept,
 } from "./ModalStyled";
 
-export const ModalContent = ({ title, subtitle }) => {
-  const [open, setOpen] = React.useState(false);
+export const ModalContent = ({ title, subtitle, rm }) => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
+  const { openDeleteModal, setOpenDeleteModal, deleteProductModalID } =
+    useContext(DrawerContext);
 
   const handleClose = () => {
-    setOpen(false);
+    setOpenDeleteModal(false);
   };
 
   const handleDelete = () => {
-    setOpen(false);
+    setOpenDeleteModal(false);
+    dispatch(rm(deleteProductModalID));
+    setDeleteProductModalID("");
   };
 
   return (
     <Modal
-      open={open}
+      open={openDeleteModal}
       onClose={handleClose}
       aria-labelledby="parent-modal-title"
       aria-describedby="parent-modal-description"
+      disableScrollLock={true}
     >
       <ModalBody>
         <ModalTitle>{title}</ModalTitle>
