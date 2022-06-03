@@ -7,6 +7,7 @@ export const ModalBody = styled(Box)`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
+  max-width: 90%;
   height: 226px;
   text-align: center;
   display: flex;
