@@ -14,13 +14,14 @@ import Login from "../../pages/Login";
 const Routlar = () => {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/products" element={<Products />} />
-      <Route path="/restaurants" element={<Restaurants />} />
-      <Route path="/category" element={<Category />} />
-      <Route path="/orders" element={<Orders />} />
-      <Route path="/offers" element={<Offers />} />
+      <Route path="/panel/dashboard" element={<Dashboard />} />
+      <Route path="/panel/products" element={<Products />} />
+      <Route path="/panel/restaurants" element={<Restaurants />} />
+      <Route path="/panel/category" element={<Category />} />
+      <Route path="/panel/orders" element={<Orders />} />
+      <Route path="panel/offers" element={<Offers />} />
       <Route path="/logout" element={<Login />} />
+      <Route path="*" element={`Page not found`} />
     </Routes>
   );
 };

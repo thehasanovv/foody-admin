@@ -1,9 +1,16 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { DrawerContext } from "../../../contextApi/DrawerContext";
 
 const SidebarItem = ({ icon, title, path }) => {
+  const { setOpenMenuDrawer } = useContext(DrawerContext);
+
   return (
-    <SidebarItemContainer to={path}>
+    <SidebarItemContainer
+      to={path}
+      onClick={setOpenMenuDrawer.bind(null, false)}
+    >
       <SidebarItemIcon>{icon}</SidebarItemIcon>
       <SidebarItemTitle>{title}</SidebarItemTitle>
     </SidebarItemContainer>
@@ -12,7 +19,7 @@ const SidebarItem = ({ icon, title, path }) => {
 
 export default SidebarItem;
 
-const SidebarItemContainer = styled(NavLink)`
+export const SidebarItemContainer = styled(NavLink)`
   width: 80%;
   display: flex;
   align-items: center;
@@ -22,13 +29,14 @@ const SidebarItemContainer = styled(NavLink)`
   cursor: pointer;
   margin: 0 auto;
   transition: all 0.3s linear;
+
   &.active {
     background: ${(props) => props.theme.bgSidebarHover};
   }
   &:hover {
     background: ${(props) => props.theme.bgSidebarHover};
     color: ${(props) => props.theme.cSidebarText};
-    border-radius: 0.5rem;
+    /* border-radius: 0.5rem; */
   }
 `;
 

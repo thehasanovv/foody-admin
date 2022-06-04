@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": "0001",
+      "name": "Sushi",
+      "desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 12.9,
+      "restaurant": "China Restaurant",
+      "img_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYkJtscD2kVRNUe1vv-K1HXgiVrvdVRZtjg&usqp=CAU"
+    },
+    {
+      "id": "0002",
+      "name": "Sausace",
+      "desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 4.9,
+      "restaurant": "Papa John's",
+      "img_url": "https://pizza.az/upload/resize_cache/iblock/3fd/260_250_040cd750bba9870f18aada2478b24840a/3fd2ddc518e442ca561c193c2393878c.jpg"
+    },
+    {
+      "id": "0003",
+      "name": "Big Tasty",
+      "desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 5.9,
+      "restaurant": "Mc Donald's",
+      "img_url": "https://www.mcdonalds.com.mt/wp-content/uploads/2018/05/BigTasty-Classic.jpg"
+    },
+    {
+      "id": "0004",
+      "name": "French Fries",
+      "desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 2.9,
+      "restaurant": "Mc Donald's",
+      "img_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/newscms/2016_16/1501446/100_french-fries.jpg"
+    },
+    {
+      "id": "0005",
+      "name": "Vopper",
+      "desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 4.5,
+      "restaurant": "Burger King",
+      "img_url": "https://images.bolt.eu/store/2021/2021-10-26/e032c334-5780-4bfe-a530-b33573784984.jpeg"
+    },
+    {
+      "id": "0006",
+      "name": "Adana Kebab",
+      "desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 7.9,
+      "restaurant": "Anadolu Restaurant",
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Adana_kebab.jpg/800px-Adana_kebab.jpg"
+    },
+    {
+      "id": "0007",
+      "name": "Steak",
+      "desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 165.9,
+      "restaurant": "Nusret",
+      "img_url": "https://images.otstatic.com/prod1/42341288/2/large.jpg"
+    },
+    {
+      "id": "0008",
+      "name": "Cola",
+      "desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 1.9,
+      "restaurant": "KFC",
+      "img_url": "https://s3-eu-west-1.amazonaws.com/straus/media/products2/ef6df17b659e475a9f3cfa3a33289490.png"
+    },
+    {
+      "id": "0009",
+      "name": "Nuggets",
+      "desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 2.9,
+      "restaurant": "MC Donald's",
+      "img_url": "https://i.redd.it/d6zmwn0svdj51.jpg"
+    },
+    {
+      "id": "0010",
+      "name": "Twister",
+      "desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 4.9,
+      "restaurant": "KFC",
+      "img_url": "https://buy.am/media/image/22/72/fb/Twister-KFC.jpg"
+    }
+  ]
+}

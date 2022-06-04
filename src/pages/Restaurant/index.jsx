@@ -1,22 +1,54 @@
-import React from 'react';
-import { Draw } from '../../components/Draver';
+import Button from "../../components/Button";
+import Pagi from "../../components/Pagination";
+import RestaurantFormContainer from "../../components/SectionFormContainer/RestaurantFormContainer";
+import SectionHeaderContainer from "../../components/SectionHeaderContainer";
+import Loading from "../../components/Loading";
+import { DrawerContent } from "../../components/Drawer";
+import { DrawerContext } from "../../contextApi/DrawerContext";
+import { useTranslation } from "react-i18next";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchRestaurantData } from "../../store/actions/restaurantActions";
+import { ModalContent } from "../../components/Modal";
+import { deleteRestaurant } from "../../store/slicers/RestaurantSlice";
+import { useContext, useEffect } from "react";
 
 const Restaurants = () => {
+  const { restaurants, loading } = useSelector((state) => state.restaurant);
+  const { setOpenDrawer } = useContext(DrawerContext);
+  const { t } = useTranslation("translation");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRestaurantData());
+  }, [dispatch]);
+
   return (
-    <div>
-      <Draw
-        title="Add Product"
-        subTitle="Upload your image"
-        subTitle2="Add your description and necessary information">
-        It is a long established fact that a reader will be distracted by the readable content of a
-        page when looking at its layout. The point of using Lorem Ipsum is that it has a
-        more-or-less normal distribution of letters, as opposed to using 'Content here, content
-        here', making it look like readable English. Many desktop publishing packages and web page
-        editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
-        uncover many web sites still in their infancy. Various versions have evolved over the years,
-        sometimes by accident, sometimes on purpose (injected humour and the like).
-      </Draw>
-    </div>
+    <>
+      <ModalContent
+        title={t("title delete")}
+        subtitle={t("subtitle restaurant delete")}
+        rm={deleteRestaurant}
+      />
+      {/* Section Form Drawer  */}
+      <DrawerContent rotate="right">
+        <RestaurantFormContainer />
+      </DrawerContent>
+      {/* Section Header  */}
+      <SectionHeaderContainer>
+        <h2>{t("menu.restaurants")}</h2>
+        <Button onClick={setOpenDrawer.bind(null, true)}>
+          {t("add restaurant")}
+        </Button>
+      </SectionHeaderContainer>
+      {/* Section Product Cards  */}
+      {loading && <Loading />}
+      {!loading && restaurants.length === 0 && (
+        <p style={{ textAlign: "center" }}>No Restaurant</p>
+      )}
+      {!loading && restaurants.length !== 0 && (
+        <Pagi data={restaurants} comp={"restaurant"} per_page={4} />
+      )}
+    </>
   );
 };
 

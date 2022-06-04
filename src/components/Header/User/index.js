@@ -16,6 +16,10 @@ const Title = styled.span`
   font-weight: 500;
   color: ${({ theme }) => theme.text};
   margin-left: 1rem;
+
+  @media screen and (max-width: 576px) {
+    display: none;
+  }
 `;
 
 const User = () => {

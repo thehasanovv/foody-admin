@@ -6,6 +6,8 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import IconDelete from "../Icons/Delete";
 import { Button } from "@mui/material";
+import { useContext } from "react";
+import { DrawerContext } from "../../contextApi/DrawerContext";
 import { useState, useEffect } from "react";
 import {
   PaperStyled,
@@ -13,11 +15,13 @@ import {
   TableContainerStyled,
 } from "./Table.styled";
 
-function StickyHeadTable({ rows }) {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+function StickyHeadTable({ rows, rm }) {
+  const { setOpenDeleteModal, setDeleteProductModalID } =
+    useContext(DrawerContext);
 
+  const [page, setPage] = useState(0);
   const [columns, setColumn] = useState([]);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
     rows.length &&
@@ -31,10 +35,11 @@ function StickyHeadTable({ rows }) {
           };
         })
       );
-  }, []);
+  }, [rows]);
 
   const handleDelete = (id) => {
-    console.log(id);
+    setOpenDeleteModal(true);
+    setDeleteProductModalID(id);
   };
 
   const handleChangePage = (event, newPage) => {
@@ -47,66 +52,77 @@ function StickyHeadTable({ rows }) {
   };
 
   return (
-    <PaperStyled>
-      <TableContainerStyled>
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCellStyled
-                  // cellwidth={100}
-                  key={column.id}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth }}
-                >
-                  {column.label}
-                </TableCellStyled>
-              ))}
-              <TableCellStyled align={"center"}>Delete</TableCellStyled>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
-                    {columns.map((column) => {
-                      const value = row[column.id];
-                      return (
-                        // prettier-ignore
-                        <TableCellStyled key={column.id} align={column.align}>
+    <>
+      {!rows.length ? (
+        <h3 style={{ textAlign: "center" }}>Empty Table</h3>
+      ) : (
+        <PaperStyled>
+          <TableContainerStyled>
+            <Table stickyHeader aria-label="sticky table">
+              <TableHead>
+                <TableRow>
+                  {columns.map((column) => (
+                    <TableCellStyled
+                      // cellwidth={100}
+                      key={column.id}
+                      align={column.align}
+                      style={{ minWidth: column.minWidth }}
+                    >
+                      {column.label}
+                    </TableCellStyled>
+                  ))}
+                  <TableCellStyled align={"center"}>Delete</TableCellStyled>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((row) => {
+                    return (
+                      <TableRow
+                        hover
+                        role="checkbox"
+                        tabIndex={-1}
+                        key={row.id}
+                      >
+                        {columns.map((column) => {
+                          const value = row[column.id];
+                          return (
+                            // prettier-ignore
+                            <TableCellStyled key={column.id} align={column.align}>
                             {column.id === 'img_url'
                               ? <img width="45" height="45" src={value} />
                               : value.length > 30 ? `${value.slice(0, 30)}...` : value}
                         </TableCellStyled>
-                      );
-                    })}
-                    <TableCellStyled
-                      key={row.id}
-                      align={"center"}
-                      onClick={() => handleDelete(row.id)}
-                    >
-                      <Button variant="text">
-                        <IconDelete />
-                      </Button>
-                    </TableCellStyled>
-                  </TableRow>
-                );
-              })}
-          </TableBody>
-        </Table>
-      </TableContainerStyled>
-      <TablePagination
-        rowsPerPageOptions={[10, 20, 100]}
-        component="div"
-        count={rows?.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
-    </PaperStyled>
+                          );
+                        })}
+                        <TableCellStyled key={row.id} align={"center"}>
+                          <Button
+                            variant="text"
+                            onClick={() => handleDelete(row.id)}
+                          >
+                            <IconDelete />
+                          </Button>
+                        </TableCellStyled>
+                      </TableRow>
+                    );
+                  })}
+              </TableBody>
+            </Table>
+          </TableContainerStyled>
+          <TablePagination
+            page={page}
+            component="div"
+            count={rows?.length}
+            rowsPerPage={rowsPerPage}
+            onPageChange={handleChangePage}
+            rowsPerPageOptions={[10, 20, 100]}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+            SelectProps={{ native: true }}
+          />
+        </PaperStyled>
+      )}
+    </>
   );
 }
 

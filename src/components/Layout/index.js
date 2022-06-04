@@ -1,14 +1,15 @@
-import { Col, Container, Row } from "reactstrap";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 import Login from "../../pages/Login";
 import { useLocation } from "react-router-dom";
+import { Col, Container, Row } from "reactstrap";
+import { ModalContent } from "../Modal";
 
 const Layout = ({ children }) => {
   let { pathname } = useLocation();
-
   return (
     <>
+      <ModalContent />
       {pathname !== "/logout" ? (
         <Container>
           <Row>
@@ -17,10 +18,12 @@ const Layout = ({ children }) => {
             </Col>
           </Row>
           <Row style={{ marginTop: "2rem" }}>
-            <Col md={3}>
+            <Col md={0} lg={3}>
               <Sidebar />
             </Col>
-            <Col md={9}>{children}</Col>
+            <Col md={12} lg={9}>
+              {children}
+            </Col>
           </Row>
         </Container>
       ) : (

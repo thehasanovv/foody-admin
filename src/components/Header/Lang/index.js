@@ -1,22 +1,32 @@
-import styled from "styled-components";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const Lang = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [flag, setFlag] = useState("en");
   const open = Boolean(anchorEl);
+  const { i18n } = useTranslation();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+  useEffect(() => {
+    let lang = localStorage.getItem("lang") || "en";
+    setFlag(lang);
+    i18n.changeLanguage(lang);
+  }, [flag, i18n]);
+
   const handleClose = (flag) => {
-    if (flag === "az" || flag === "en" || flag === "fr") setFlag(flag);
+    if (flag === "az" || flag === "en" || flag === "fr") {
+      setFlag(flag);
+      localStorage.setItem("lang", flag);
+    }
     setAnchorEl(null);
   };
-
   return (
     <div>
       <Button
@@ -52,5 +62,4 @@ const Lang = () => {
   );
 };
 
-const ContainerLang = styled.div``;
 export default Lang;

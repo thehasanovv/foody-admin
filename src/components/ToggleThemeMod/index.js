@@ -4,11 +4,18 @@ let Sun, Moon;
 
 Sun = Moon = styled.svg`
   position: absolute;
-  top: 0.5rem;
-  right: 0.2rem;
+  top: 0.6rem;
+  right: 0.3rem;
+  cursor: pointer;
+
+  @media screen and (max-width: 576px) {
+    width: 44px;
+    top: 2%;
+    top: 0.8rem;
+    right: 12rem;
+  }
 `;
 export const ToggleThemeMod = ({ theme, toggleTheme }) => {
-  console.log(theme);
   return (
     <div onClick={toggleTheme}>
       {
