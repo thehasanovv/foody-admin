@@ -1,14 +1,15 @@
 import Pagi from "../../components/Pagination";
 import SectionHeaderContainer from "../../components/SectionHeaderContainer";
+import Loading from "../../components/Loading";
 import { ModalContent } from "../../components/Modal";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector, useDispatch } from "react-redux";
 import { fetchProductData } from "../../store/actions/productActions";
 import { deleteProduct } from "../../store/slicers/ProductSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 const Products = () => {
-  const products = useSelector((state) => state.product.products);
+  const { products, loading } = useSelector((state) => state.product);
   const { t } = useTranslation("translation");
   const dispatch = useDispatch();
 
@@ -27,8 +28,14 @@ const Products = () => {
       <SectionHeaderContainer>
         <h2>{t("menu.products")}</h2>
       </SectionHeaderContainer>
-      {/* Section Product Cards  */}
-      <Pagi data={products} comp={"product"} per_page={5} />
+
+      {loading && <Loading />}
+      {!loading && products.length === 0 && (
+        <p style={{ textAlign: "center" }}>No Product</p>
+      )}
+      {!loading && products.length !== 0 && (
+        <Pagi data={products} comp={"product"} per_page={5} />
+      )}
     </>
   );
 };

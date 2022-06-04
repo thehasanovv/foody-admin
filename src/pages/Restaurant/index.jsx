@@ -2,7 +2,7 @@ import Button from "../../components/Button";
 import Pagi from "../../components/Pagination";
 import RestaurantFormContainer from "../../components/SectionFormContainer/RestaurantFormContainer";
 import SectionHeaderContainer from "../../components/SectionHeaderContainer";
-import { useContext, useEffect } from "react";
+import Loading from "../../components/Loading";
 import { DrawerContent } from "../../components/Drawer";
 import { DrawerContext } from "../../contextApi/DrawerContext";
 import { useTranslation } from "react-i18next";
@@ -10,9 +10,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchRestaurantData } from "../../store/actions/restaurantActions";
 import { ModalContent } from "../../components/Modal";
 import { deleteRestaurant } from "../../store/slicers/RestaurantSlice";
+import { useContext, useEffect } from "react";
 
 const Restaurants = () => {
-  const restaurants = useSelector((state) => state.restaurant.restaurants);
+  const { restaurants, loading } = useSelector((state) => state.restaurant);
   const { setOpenDrawer } = useContext(DrawerContext);
   const { t } = useTranslation("translation");
   const dispatch = useDispatch();
@@ -40,7 +41,13 @@ const Restaurants = () => {
         </Button>
       </SectionHeaderContainer>
       {/* Section Product Cards  */}
-      <Pagi data={restaurants} comp={"restaurant"} per_page={4} />
+      {loading && <Loading />}
+      {!loading && restaurants.length === 0 && (
+        <p style={{ textAlign: "center" }}>No Restaurant</p>
+      )}
+      {!loading && restaurants.length !== 0 && (
+        <Pagi data={restaurants} comp={"restaurant"} per_page={4} />
+      )}
     </>
   );
 };

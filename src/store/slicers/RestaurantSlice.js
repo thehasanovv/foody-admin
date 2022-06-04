@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { restaurants: [] };
+const initialState = { restaurants: [], loading: false };
 
 export const restaurantSlice = createSlice({
-  name: 'restaurant',
+  name: "restaurant",
   initialState,
   reducers: {
     getRestaurants: (state, action) => {
@@ -13,12 +13,17 @@ export const restaurantSlice = createSlice({
       state.restaurants.push(action.payload);
     },
     deleteRestaurant: (state, action) => {
-      state.restaurants = state.restaurants.filter((item) => item.id !== action.payload);
+      state.restaurants = state.restaurants.filter(
+        (item) => item.id !== action.payload
+      );
+    },
+    isLoading: (state, action) => {
+      state.loading = action.payload;
     },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { getRestaurants, addRestaurant, deleteRestaurant } = restaurantSlice.actions;
+export const { getRestaurants, addRestaurant, deleteRestaurant, isLoading } =
+  restaurantSlice.actions;
 
 export default restaurantSlice.reducer;

@@ -9,6 +9,7 @@ export const SidebarDrawerContent = ({ rotate, children }) => {
   return (
     <Drawer
       anchor={rotate}
+      disableScrollLock={true}
       open={openMenuDrawer}
       onClose={() => setOpenMenuDrawer()}
     >

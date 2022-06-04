@@ -25,7 +25,6 @@ export const SectionFormContent = ({
   const { t } = useTranslation("translation");
 
   const onSubmit = (values, { resetForm }) => {
-    console.log(values);
     setUploadImg(null);
     setOpenDrawer(false);
     resetForm();
@@ -35,9 +34,6 @@ export const SectionFormContent = ({
     <>
       <DrawerContainer>
         <DTitle>{title}</DTitle>
-        {uploadImg && (
-          <img width="150" height="100" src={URL.createObjectURL(uploadImg)} />
-        )}
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -45,6 +41,13 @@ export const SectionFormContent = ({
         >
           {({ setFieldValue, resetForm }) => (
             <FormikForm>
+              {uploadImg && (
+                <img
+                  width="150"
+                  height="100"
+                  src={URL.createObjectURL(uploadImg)}
+                />
+              )}
               <DSubContainer>
                 <DSubTitle>{t("form.upload title")}</DSubTitle>
                 {/* Subtitle content */}

@@ -8,7 +8,7 @@ export const DrawerContainer = styled(List)`
   height: 100vh;
   background: ${({ theme }) => theme.bgDrawer};
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 576px) {
     width: 100vw;
   }
 `;
@@ -33,7 +33,7 @@ export const Panel = styled(Box)`
   max-height: 300px;
   overflow-y: auto;
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 976px) {
     width: 100%;
     text-align: center;
   }
@@ -49,7 +49,7 @@ export const DTitle = styled(Box)`
   font-weight: 700; //bunu hell etmek global fonts goturmesi ucun
   color: ${({ theme }) => theme.colors.grayText};
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 976px) {
     padding: 0 0 0 1rem;
   }
 `;
@@ -64,7 +64,7 @@ export const DSubContainer = styled(Box)`
   box-sizing: border-box;
   padding: 0 5rem;
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 976px) {
     flex-direction: column;
     padding: 0 1rem;
 
@@ -81,7 +81,7 @@ export const DSubTitle = styled(List)`
   font-size: ${({ theme }) => theme.font.size.medium};
   font-weight: 400; //bunu hell etmek global fonts goturmesi ucun
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 976px) {
     width: 100%;
     text-align: center;
   }

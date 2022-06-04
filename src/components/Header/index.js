@@ -21,21 +21,18 @@ const Header = () => {
   return (
     <>
       {/* Section Form Drawer  */}
-      {
-        <DrawerContent
-          rotate="right"
-          isOpen={openProductDrawer}
-          setIsOpen={setOpenProductDrawer}
-        >
-          <ProductFormContainer setIsOpen={setOpenProductDrawer} />
-        </DrawerContent>
-      }
-
+      <DrawerContent
+        rotate="right"
+        isOpen={openProductDrawer}
+        setIsOpen={setOpenProductDrawer}
+      >
+        <ProductFormContainer setIsOpen={setOpenProductDrawer} />
+      </DrawerContent>
       {/* Section Menu Drawer  */}
       <SidebarDrawerContent rotate="left">
         <SidebarToggleMenu />
       </SidebarDrawerContent>
-
+      {/* Header */}
       <ContainerHeader>
         <div>
           <SidebarIcon onClick={setOpenMenuDrawer.bind(null, true)}>

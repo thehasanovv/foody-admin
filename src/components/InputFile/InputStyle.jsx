@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { IoMdCloudUpload } from 'react-icons/io';
+import styled from "styled-components";
+import { IoMdCloudUpload } from "react-icons/io";
 
 export const InputStyle = styled.label`
   display: flex;
@@ -9,6 +9,8 @@ export const InputStyle = styled.label`
   text-align: center;
   color: ${({ theme }) => theme.colors.grayText};
   font-size: 1rem;
+  cursor: pointer;
+
   & input {
     display: none;
   }
