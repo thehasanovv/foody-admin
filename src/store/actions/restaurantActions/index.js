@@ -16,7 +16,6 @@ export const fetchRestaurantData = () => {
 
       // dispatch(isLoading(false));
     } catch (error) {
-      console.log("error message", error);
       dispatch(isLoading(false));
     }
   };

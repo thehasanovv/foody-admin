@@ -1,9 +1,10 @@
 import axios from "axios";
 import StickyHeadTable from "../../components/Table";
 import SectionHeaderContainer from "../../components/SectionHeaderContainer";
-import { getOrders, deleteOrder } from "../../store/slicers/OrderSlice";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { ModalContent } from "../../components/Modal";
+import { getOrders, deleteOrder } from "../../store/slicers/OrderSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 const Order = () => {
@@ -19,6 +20,11 @@ const Order = () => {
 
   return (
     <>
+      <ModalContent
+        title={t("title delete")}
+        subtitle={t("subtitle order delete")}
+        rm={deleteOrder}
+      />
       <SectionHeaderContainer>
         <h2>{t("menu.orders")}</h2>
       </SectionHeaderContainer>

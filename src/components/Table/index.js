@@ -6,7 +6,8 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import IconDelete from "../Icons/Delete";
 import { Button } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useContext } from "react";
+import { DrawerContext } from "../../contextApi/DrawerContext";
 import { useState, useEffect } from "react";
 import {
   PaperStyled,
@@ -15,10 +16,12 @@ import {
 } from "./Table.styled";
 
 function StickyHeadTable({ rows, rm }) {
+  const { setOpenDeleteModal, setDeleteProductModalID } =
+    useContext(DrawerContext);
+
   const [page, setPage] = useState(0);
   const [columns, setColumn] = useState([]);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     rows.length &&
@@ -35,7 +38,8 @@ function StickyHeadTable({ rows, rm }) {
   }, [rows]);
 
   const handleDelete = (id) => {
-    dispatch(rm(id));
+    setOpenDeleteModal(true);
+    setDeleteProductModalID(id);
   };
 
   const handleChangePage = (event, newPage) => {
@@ -50,7 +54,7 @@ function StickyHeadTable({ rows, rm }) {
   return (
     <>
       {!rows.length ? (
-        <h3>Empty Table</h3>
+        <h3 style={{ textAlign: "center" }}>Empty Table</h3>
       ) : (
         <PaperStyled>
           <TableContainerStyled>

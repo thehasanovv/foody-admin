@@ -5,6 +5,7 @@ import CategoryFormContainer from "../../components/SectionFormContainer/Categor
 import { DrawerContent } from "../../components/Drawer";
 import { DrawerContext } from "../../contextApi/DrawerContext";
 import { useTranslation } from "react-i18next";
+import { ModalContent } from "../../components/Modal";
 import { deleteCategory } from "../../store/slicers/CategorySlice";
 import { fetchCategoryData } from "../../store/actions/categoryActions";
 import { useContext, useEffect } from "react";
@@ -13,8 +14,8 @@ import { useSelector, useDispatch } from "react-redux";
 const Category = () => {
   const rows = useSelector((state) => state.category.categories);
   const { setOpenDrawer } = useContext(DrawerContext);
-  const dispatch = useDispatch();
   const { t } = useTranslation("translation");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCategoryData());
@@ -22,6 +23,11 @@ const Category = () => {
 
   return (
     <>
+      <ModalContent
+        title={t("title delete")}
+        subtitle={t("subtitle category delete")}
+        rm={deleteCategory}
+      />
       <DrawerContent rotate="right">
         <CategoryFormContainer />
       </DrawerContent>
