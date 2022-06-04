@@ -1,4 +1,4 @@
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { useDarkMode } from './hooks/useDarkMode';
 import { GlobalStyles, lightTheme, darkTheme } from './styles/GlobalStyles';
 import { ToggleThemeMod } from './components/ToggleThemeMod';

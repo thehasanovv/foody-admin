@@ -1,5 +1,5 @@
-import SidebarItem from "./SidebarItem";
-import { useTranslation } from "react-i18next";
+import SidebarItem from './SidebarItem';
+import { useTranslation } from 'react-i18next';
 import {
   MdDashboard,
   MdOutlineProductionQuantityLimits,
@@ -8,15 +8,15 @@ import {
   MdOutlineReorder,
   MdLocalOffer,
   MdLogout,
-} from "react-icons/md";
+} from 'react-icons/md';
 
 const SidebarItems = () => {
-  const { t } = useTranslation("translation", { keyPrefix: "menu" });
+  const { t } = useTranslation('translation', { keyPrefix: 'menu' });
 
   return (
     //prettier-ignore
     <>
-      <SidebarItem icon={<MdDashboard />} title={t("dashboard")} path="/panel" />
+      <SidebarItem icon={<MdDashboard />} title={t("dashboard")} path="/panel/dashboard" />
       <SidebarItem icon={<MdOutlineProductionQuantityLimits />} title={t("products")} path="/panel/products" />
       <SidebarItem icon={<MdRestaurant />} title={t("restaurants")}  path="/panel/restaurants" />
       <SidebarItem icon={<MdCategory />} title={t("category")} path="/panel/category" />

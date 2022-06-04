@@ -53,36 +53,3 @@ const NotFoundTitle = styled.div`
   transform: translate (-50%, -50%);
 `;
 
-// const DashboardList = styled(Grid).attrs(() => ({
-//   container: true,
-//   spacing: 1,
-// }))`
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: flex-end;
-// `;
-
-// const DashboardCardStyled = styled(Grid).attrs(({ col }) => ({
-//   item: true,
-//   xs: 12,
-//   md: col,
-// }))`
-//   position: relative;
-//   width: ${({ width }) => (width ? `${width}px` : "100%")};
-//   height: 472px;
-//   background-color: ${({ theme }) => theme.colors.darkBlue_3};
-//   border-radius: 14px;
-//   margin-bottom: 20px !important;
-//   padding: 20px !important;
-
-//   &:nth-child(odd) {
-//     margin-right: 20px !important;
-//   }
-// `;
-
-// const NotFoundTitle = styled.p`
-//   position: absolute;
-//   top: 50%;
-//   left: 20%;
-//   transform: translate (-50%, -50%);
-// `;
