@@ -19,9 +19,8 @@ const Routlar = () => {
       <Route path="/panel/restaurants" element={<Restaurants />} />
       <Route path="/panel/category" element={<Category />} />
       <Route path="/panel/orders" element={<Orders />} />
-      <Route path="panel/offers" element={<Offers />} />
+      <Route path="/panel/offers" element={<Offers />} />
       <Route path="/logout" element={<Login />} />
-      <Route path="*" element={`Page not found`} />
     </Routes>
   );
 };
