@@ -14,6 +14,7 @@ import { useContext, useEffect } from "react";
 
 const Restaurants = () => {
   const { restaurants, loading } = useSelector((state) => state.restaurant);
+  console.log(restaurants);
   const { setOpenDrawer } = useContext(DrawerContext);
   const { t } = useTranslation("translation");
   const dispatch = useDispatch();

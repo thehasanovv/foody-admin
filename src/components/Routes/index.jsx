@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 // import Pages
 
@@ -14,6 +14,7 @@ import Login from "../../pages/Login";
 const Routlar = () => {
   return (
     <Routes>
+      <Route path="/" element={<Navigate to="/panel/dashboard" />} />
       <Route path="/panel/dashboard" element={<Dashboard />} />
       <Route path="/panel/products" element={<Products />} />
       <Route path="/panel/restaurants" element={<Restaurants />} />

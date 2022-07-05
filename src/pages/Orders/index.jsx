@@ -13,9 +13,9 @@ const Order = () => {
   const { t } = useTranslation("translation");
 
   useEffect(() => {
-    axios("http://127.0.0.1:5500/src/mocks/order/order.json").then((response) =>
-      dispatch(getOrders(response.data.orders))
-    );
+    axios(
+      "https://foody-delivery-admin-default-rtdb.firebaseio.com/orders.json"
+    ).then((response) => dispatch(getOrders(response.data.orders)));
   }, [dispatch]);
 
   return (

@@ -20,9 +20,9 @@ const Offers = () => {
   const { t } = useTranslation("translation");
 
   useEffect(() => {
-    axios("http://127.0.0.1:5500/src/mocks/offer/offer.json").then((response) =>
-      dispatch(getOffers(response.data.offers))
-    );
+    axios(
+      "https://foody-delivery-admin-default-rtdb.firebaseio.com/offers.json"
+    ).then((response) => dispatch(getOffers(response.data.offers)));
   }, [dispatch]);
 
   const rows = useSelector((state) => state.offer.offers);

@@ -11,6 +11,7 @@ import {
   DSubTitle,
   Panel,
   FormikForm,
+  UploadImg,
 } from "./SectionFormStlyle";
 
 export const SectionFormContent = ({
@@ -41,15 +42,18 @@ export const SectionFormContent = ({
         >
           {({ setFieldValue, resetForm }) => (
             <FormikForm>
-              {uploadImg && (
-                <img
-                  width="150"
-                  height="100"
-                  src={URL.createObjectURL(uploadImg)}
-                />
-              )}
               <DSubContainer>
-                <DSubTitle>{t("form.upload title")}</DSubTitle>
+                <DSubTitle>
+                  {t("form.upload title")}
+                  <UploadImg>
+                    {uploadImg && (
+                      <img
+                        style={{ objectFit: "contain" }}
+                        src={URL.createObjectURL(uploadImg)}
+                      />
+                    )}
+                  </UploadImg>
+                </DSubTitle>
                 {/* Subtitle content */}
                 <Panel>
                   <InputFile

@@ -6,15 +6,11 @@ export const fetchRestaurantData = () => {
     try {
       dispatch(isLoading(true));
       const response = await axios(
-        "http://127.0.0.1:5500/src/mocks/restaurant/rest.json"
+        // "http://127.0.0.1:5500/src/mocks/restaurant/rest.json"
+        "https://foody-delivery-admin-default-rtdb.firebaseio.com/restaurants.json"
       );
       dispatch(getRestaurants(response.data.restaurants));
-
-      setTimeout(() => {
-        dispatch(isLoading(false));
-      }, 300);
-
-      // dispatch(isLoading(false));
+      dispatch(isLoading(false));
     } catch (error) {
       dispatch(isLoading(false));
     }

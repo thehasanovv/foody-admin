@@ -10,6 +10,7 @@ export const DrawerContainer = styled(List)`
 
   @media screen and (max-width: 576px) {
     width: 100vw;
+    height: auto;
   }
 `;
 
@@ -75,7 +76,7 @@ export const DSubContainer = styled(Box)`
   }
 `;
 
-export const DSubTitle = styled(List)`
+export const DSubTitle = styled(Box)`
   width: 30%;
   color: ${({ theme }) => theme.text};
   font-size: ${({ theme }) => theme.font.size.medium};
@@ -84,6 +85,21 @@ export const DSubTitle = styled(List)`
   @media screen and (max-width: 976px) {
     width: 100%;
     text-align: center;
+  }
+`;
+
+export const UploadImg = styled.div`
+  object-fit: cover;
+  margin-top: 1rem;
+
+  img {
+    width: 150px;
+    height: 150px;
+
+    @media screen and (max-width: 576px) {
+      display: block;
+      margin: 0 auto;
+    }
   }
 `;
 /* ============================== */
