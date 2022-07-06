@@ -3,6 +3,7 @@ import InputFile from "../InputFile";
 import { Formik } from "formik";
 import { useTranslation } from "react-i18next";
 import { DrawerContext } from "../../contextApi/DrawerContext";
+import { nanoid } from "nanoid";
 import { useState, useContext } from "react";
 import {
   DrawerContainer,
@@ -26,9 +27,9 @@ export const SectionFormContent = ({
   const { setOpenDrawer } = useContext(DrawerContext);
   const { t } = useTranslation("translation");
   console.log("uploadImg", uploadImg);
-  
+
   const onSubmit = (values, { resetForm }) => {
-    addData(values);
+    addData({ ...values, id: nanoid() });
     setUploadImg(null);
     setOpenDrawer(false);
     resetForm();
@@ -60,7 +61,7 @@ export const SectionFormContent = ({
                 {/* Subtitle content */}
                 <Panel>
                   <InputFile
-                    imgKey="img"
+                    imgKey="img_url"
                     setFieldValue={setFieldValue}
                     setUploadImg={setUploadImg}
                   />

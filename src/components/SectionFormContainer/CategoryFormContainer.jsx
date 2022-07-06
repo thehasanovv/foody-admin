@@ -21,7 +21,7 @@ const CategoryForm = () => {
   };
 
   const validationSchema = Yup.object({
-    img: Yup.string(),
+    img_url: Yup.string(),
     name: Yup.string().required("Required"),
     slug: Yup.string().required("Required"),
   });

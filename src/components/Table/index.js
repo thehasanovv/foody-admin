@@ -53,7 +53,7 @@ function StickyHeadTable({ rows, rm }) {
 
   return (
     <>
-      {!rows?.length ? (
+      {!rows.length ? (
         <h3 style={{ textAlign: "center" }}>Empty Table</h3>
       ) : (
         <PaperStyled>

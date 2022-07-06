@@ -33,7 +33,7 @@ const RestaurantForm = () => {
   ];
 
   const initialValues = {
-    img: "",
+    img_url: "",
     name: "",
     cuisine: "",
     deliveryPrice: "",
@@ -44,7 +44,7 @@ const RestaurantForm = () => {
   };
 
   const validationSchema = Yup.object({
-    img: Yup.string().required("Required"),
+    img_url: Yup.string(),
     name: Yup.string().required("Required"),
     cuisine: Yup.string().required("Required"),
     deliveryPrice: Yup.number().required("Required"),

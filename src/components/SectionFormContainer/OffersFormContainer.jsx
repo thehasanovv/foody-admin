@@ -9,19 +9,19 @@ import { useDispatch } from "react-redux";
 const OfferForm = () => {
   const { t } = useTranslation("translation");
   const dispatch = useDispatch();
-  
+
   const addData = (data) => {
     dispatch(addOfferData(data));
   };
 
   const initialValues = {
-    img: "",
+    img_url: "",
     title: "",
     description: "",
   };
 
   const validationSchema = Yup.object({
-    img: Yup.string().required("Required"),
+    img_url: Yup.string(),
     title: Yup.string().required("Required"),
     description: Yup.string().required("Required"),
   });

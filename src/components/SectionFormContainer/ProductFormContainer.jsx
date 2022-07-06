@@ -33,7 +33,7 @@ const ProductsForm = () => {
   ];
 
   const initialValues = {
-    img: "",
+    img_url: "",
     name: "",
     description: "",
     price: "",
@@ -41,6 +41,7 @@ const ProductsForm = () => {
   };
 
   const validationSchema = Yup.object({
+    img_url: Yup.string().required("Required"),
     name: Yup.string().required("Required"),
     description: Yup.string().required("Required"),
     price: Yup.string().required("Required"),
