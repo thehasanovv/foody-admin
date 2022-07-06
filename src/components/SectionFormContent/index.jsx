@@ -19,13 +19,16 @@ export const SectionFormContent = ({
   title,
   initialValues,
   validationSchema,
+  addData,
 }) => {
   const [uploadImg, setUploadImg] = useState(null);
   const { openProductDrawer, setOpenProductDrawer } = useContext(DrawerContext);
   const { setOpenDrawer } = useContext(DrawerContext);
   const { t } = useTranslation("translation");
-
+  console.log("uploadImg", uploadImg);
+  
   const onSubmit = (values, { resetForm }) => {
+    addData(values);
     setUploadImg(null);
     setOpenDrawer(false);
     resetForm();

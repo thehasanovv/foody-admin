@@ -16,7 +16,7 @@ const Category = () => {
   const { setOpenDrawer } = useContext(DrawerContext);
   const { t } = useTranslation("translation");
   const dispatch = useDispatch();
-
+  console.log(rows);
   useEffect(() => {
     dispatch(fetchCategoryData());
   }, [dispatch]);
@@ -37,7 +37,7 @@ const Category = () => {
           {t("add category")}
         </Button>
       </SectionHeaderContainer>
-      {rows && <StickyHeadTable rm={deleteCategory} rows={rows} />}
+      {rows.length && <StickyHeadTable rm={deleteCategory} rows={rows} />}
     </>
   );
 };

@@ -1,15 +1,43 @@
 import axios from "axios";
-import { getRestaurants, isLoading } from "../../slicers/RestaurantSlice";
+import {
+  getRestaurants,
+  isLoading,
+  addRestaurant,
+} from "../../slicers/RestaurantSlice";
+
+const options = {
+  headers: {
+    "Content-Type": "application/json",
+  },
+};
+// Add a new product data
+export const addRestaurantData = (restaurant) => {
+  return async (dispatch) => {
+    try {
+      // dispatch(isLoading(true));
+      const response = await axios.post(
+        "https://foody-delivery-admin-default-rtdb.firebaseio.com/restaurants/restaurants.json",
+        restaurant,
+        options
+      );
+      dispatch(addRestaurant(restaurant));
+      // dispatch(isLoading(false));
+    } catch (error) {
+      // dispatch(isLoading(false));
+    }
+  };
+};
 
 export const fetchRestaurantData = () => {
   return async (dispatch) => {
     try {
       dispatch(isLoading(true));
       const response = await axios(
-        // "http://127.0.0.1:5500/src/mocks/restaurant/rest.json"
         "https://foody-delivery-admin-default-rtdb.firebaseio.com/restaurants.json"
       );
-      dispatch(getRestaurants(response.data.restaurants));
+      const loadedData = Object.values(response.data.restaurants);
+      dispatch(getRestaurants(loadedData));
+      // console.log(response.data.restaurants);
       dispatch(isLoading(false));
     } catch (error) {
       dispatch(isLoading(false));

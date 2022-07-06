@@ -22,7 +22,10 @@ const Offers = () => {
   useEffect(() => {
     axios(
       "https://foody-delivery-admin-default-rtdb.firebaseio.com/offers.json"
-    ).then((response) => dispatch(getOffers(response.data.offers)));
+    ).then((response) => {
+      const loadedData = Object.values(response.data.offers);
+      dispatch(getOffers(loadedData));
+    });
   }, [dispatch]);
 
   const rows = useSelector((state) => state.offer.offers);

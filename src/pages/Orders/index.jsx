@@ -15,7 +15,10 @@ const Order = () => {
   useEffect(() => {
     axios(
       "https://foody-delivery-admin-default-rtdb.firebaseio.com/orders.json"
-    ).then((response) => dispatch(getOrders(response.data.orders)));
+    ).then((response) => {
+      const loadedData = Object.values(response.data.orders);
+      dispatch(getOrders(loadedData));
+    });
   }, [dispatch]);
 
   return (

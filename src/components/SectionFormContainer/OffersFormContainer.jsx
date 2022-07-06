@@ -3,9 +3,16 @@ import * as Yup from "yup";
 import FormControl from "../Form/FormControl";
 import { SectionFormContent } from "../SectionFormContent";
 import { useTranslation } from "react-i18next";
+import { addOfferData } from "../../store/actions/offersActions";
+import { useDispatch } from "react-redux";
 
 const OfferForm = () => {
   const { t } = useTranslation("translation");
+  const dispatch = useDispatch();
+  
+  const addData = (data) => {
+    dispatch(addOfferData(data));
+  };
 
   const initialValues = {
     img: "",
@@ -25,6 +32,7 @@ const OfferForm = () => {
         title={t("add offer")}
         initialValues={initialValues}
         validationSchema={validationSchema}
+        addData={addData}
       >
         <FormControl
           control="input"

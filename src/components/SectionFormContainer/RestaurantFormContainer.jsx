@@ -3,9 +3,16 @@ import * as Yup from "yup";
 import FormControl from "../Form/FormControl";
 import { SectionFormContent } from "../SectionFormContent";
 import { useTranslation } from "react-i18next";
+import { addRestaurantData } from "../../store/actions/restaurantActions";
+import { useDispatch } from "react-redux";
 
 const RestaurantForm = () => {
   const { t } = useTranslation("translation");
+  const dispatch = useDispatch();
+
+  const addData = (data) => {
+    dispatch(addRestaurantData(data));
+  };
 
   const options = [
     {
@@ -53,6 +60,7 @@ const RestaurantForm = () => {
         title={t("add restaurant")}
         initialValues={initialValues}
         validationSchema={validationSchema}
+        addData={addData}
       >
         <FormControl
           control="input"

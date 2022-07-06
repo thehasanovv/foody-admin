@@ -3,9 +3,16 @@ import * as Yup from "yup";
 import FormControl from "../Form/FormControl";
 import { SectionFormContent } from "../SectionFormContent";
 import { useTranslation } from "react-i18next";
+import { addProductData } from "../../store/actions/productActions";
+import { useDispatch } from "react-redux";
 
 const ProductsForm = () => {
   const { t } = useTranslation("translation");
+  const dispatch = useDispatch();
+
+  const addData = (data) => {
+    dispatch(addProductData(data));
+  };
 
   const options = [
     {
@@ -46,6 +53,7 @@ const ProductsForm = () => {
         title={t("add category")}
         initialValues={initialValues}
         validationSchema={validationSchema}
+        addData={addData}
       >
         <FormControl
           control="input"

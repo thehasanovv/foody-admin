@@ -24,7 +24,7 @@ function StickyHeadTable({ rows, rm }) {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    rows.length &&
+    rows?.length &&
       setColumn(
         Object.keys(rows[0]).map((key) => {
           return {
@@ -53,7 +53,7 @@ function StickyHeadTable({ rows, rm }) {
 
   return (
     <>
-      {!rows.length ? (
+      {!rows?.length ? (
         <h3 style={{ textAlign: "center" }}>Empty Table</h3>
       ) : (
         <PaperStyled>
