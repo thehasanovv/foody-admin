@@ -20,6 +20,7 @@ export const FormikForm = styled(Form)`
   justify-content: space-around;
   height: 90%;
 `;
+
 //Bu panel Drawer icerisinde olan form ve sekil inputu ucun hazirlanib
 export const Panel = styled(Box)`
   display: flex;
@@ -102,4 +103,27 @@ export const UploadImg = styled.div`
     }
   }
 `;
+
 /* ============================== */
+import { IoMdCloudUpload } from "react-icons/io";
+
+export const InputStyle = styled.label`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.grayText};
+  font-size: 1rem;
+  cursor: pointer;
+
+  & input {
+    display: none;
+  }
+`;
+
+export const IconFileUpload = styled(IoMdCloudUpload)`
+  color: ${({ theme }) => theme.colors.lightPurple_3};
+  font-size: 3rem;
+  text-align: center;
+`;

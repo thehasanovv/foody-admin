@@ -1,5 +1,4 @@
 import Button from "../Button";
-import InputFile from "../InputFile";
 import { Formik } from "formik";
 import { useTranslation } from "react-i18next";
 import { DrawerContext } from "../../contextApi/DrawerContext";
@@ -13,6 +12,8 @@ import {
   Panel,
   FormikForm,
   UploadImg,
+  InputStyle,
+  IconFileUpload,
 } from "./SectionFormStlyle";
 
 export const SectionFormContent = ({
@@ -26,7 +27,7 @@ export const SectionFormContent = ({
   const { openProductDrawer, setOpenProductDrawer } = useContext(DrawerContext);
   const { setOpenDrawer } = useContext(DrawerContext);
   const { t } = useTranslation("translation");
-  console.log("uploadImg", uploadImg);
+  // console.log("uploadImg", uploadImg);
 
   const onSubmit = (values, { resetForm }) => {
     addData({ ...values, id: nanoid() });
@@ -46,6 +47,7 @@ export const SectionFormContent = ({
         >
           {({ setFieldValue, resetForm }) => (
             <FormikForm>
+              {/* === SubContainer content === */}
               <DSubContainer>
                 <DSubTitle>
                   {t("form.upload title")}
@@ -58,20 +60,27 @@ export const SectionFormContent = ({
                     )}
                   </UploadImg>
                 </DSubTitle>
-                {/* Subtitle content */}
                 <Panel>
-                  <InputFile
-                    imgKey="img_url"
-                    setFieldValue={setFieldValue}
-                    setUploadImg={setUploadImg}
-                  />
+                  <InputStyle htmlFor="inputfile">
+                    <IconFileUpload />
+                    {t("form.upload")}
+                    <input
+                      type="file"
+                      id="inputfile"
+                      onChange={(val) => {
+                        setFieldValue("img_url", val.target.files[0]);
+                        setUploadImg(val.target.files[0]);
+                      }}
+                    />
+                  </InputStyle>
                 </Panel>
               </DSubContainer>
+              {/* === SubContainer content === */}
               <DSubContainer>
                 <DSubTitle>{t("form.form title")}</DSubTitle>
-                {/* Subtitle content */}
                 <Panel>{children}</Panel>
               </DSubContainer>
+              {/* === SubContainer content === */}
               <DSubContainer>
                 <Button
                   type="button"

@@ -41,7 +41,7 @@ const ProductsForm = () => {
   };
 
   const validationSchema = Yup.object({
-    img_url: Yup.string().required("Required"),
+    // img_url: Yup.string().required("Required"),
     name: Yup.string().required("Required"),
     description: Yup.string().required("Required"),
     price: Yup.string().required("Required"),
