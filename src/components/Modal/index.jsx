@@ -26,7 +26,7 @@ export const ModalContent = ({ title, subtitle, rm }) => {
   const handleDelete = () => {
     setOpenDeleteModal(false);
     dispatch(rm(deleteProductModalID));
-    setDeleteProductModalID("");
+    // setDeleteProductModalID("");
   };
 
   return (

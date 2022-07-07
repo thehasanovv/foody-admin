@@ -3,6 +3,7 @@ import {
   getRestaurants,
   isLoading,
   addRestaurant,
+  deleteRestaurant,
 } from "../../slicers/RestaurantSlice";
 
 const options = {
@@ -10,21 +11,31 @@ const options = {
     "Content-Type": "application/json",
   },
 };
+
+// Remove data from database
+export const removeRestaurantsData = (id) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.delete(
+        `https://foody-delivery-admin-default-rtdb.firebaseio.com/restaurants/restaurants/${id}.json`,
+        options
+      );
+      dispatch(deleteRestaurant(id));
+    } catch (error) {}
+  };
+};
+
 // Add a new product data
 export const addRestaurantData = (restaurant) => {
   return async (dispatch) => {
     try {
-      // dispatch(isLoading(true));
       const response = await axios.post(
         "https://foody-delivery-admin-default-rtdb.firebaseio.com/restaurants/restaurants.json",
         restaurant,
         options
       );
       dispatch(addRestaurant(restaurant));
-      // dispatch(isLoading(false));
-    } catch (error) {
-      // dispatch(isLoading(false));
-    }
+    } catch (error) {}
   };
 };
 

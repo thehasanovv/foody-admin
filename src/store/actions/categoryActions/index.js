@@ -1,11 +1,29 @@
 import axios from "axios";
-import { getCategories, addCategory } from "../../slicers/CategorySlice";
+import {
+  getCategories,
+  addCategory,
+  deleteCategory,
+} from "../../slicers/CategorySlice";
 
 const options = {
   headers: {
     "Content-Type": "application/json",
   },
 };
+
+// Remove data from database
+export const removeCategoryData = (id) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.delete(
+        `https://foody-delivery-admin-default-rtdb.firebaseio.com/categories/categories/${id}.json`,
+        options
+      );
+      dispatch(deleteCategory(id));
+    } catch (error) {}
+  };
+};
+
 // Add a new product data
 export const addCategoryData = (category) => {
   return async (dispatch) => {

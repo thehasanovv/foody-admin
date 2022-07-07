@@ -4,7 +4,10 @@ import Loading from "../../components/Loading";
 import { ModalContent } from "../../components/Modal";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { fetchProductData } from "../../store/actions/productActions";
+import {
+  fetchProductData,
+  removeProductData,
+} from "../../store/actions/productActions";
 import { deleteProduct } from "../../store/slicers/ProductSlice";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -22,7 +25,7 @@ const Products = () => {
       <ModalContent
         title={t("title delete")}
         subtitle={t("subtitle product delete")}
-        rm={deleteProduct}
+        rm={removeProductData}
       />
       {/* Section Header  */}
       <SectionHeaderContainer>

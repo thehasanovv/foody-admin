@@ -2,7 +2,7 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import { CardsContainer } from "./ProductCardStyle";
 
-const ProductCards = ({ datas, rm }) => {
+const ProductCards = ({ datas }) => {
   return (
     <CardsContainer>
       {datas.map((data) => (
@@ -14,7 +14,6 @@ const ProductCards = ({ datas, rm }) => {
           price={data.price}
           restaurant={data.restaurant}
           img_url={data.img_url}
-          rm={rm}
         />
       ))}
     </CardsContainer>

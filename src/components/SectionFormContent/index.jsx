@@ -27,7 +27,6 @@ export const SectionFormContent = ({
   const { openProductDrawer, setOpenProductDrawer } = useContext(DrawerContext);
   const { setOpenDrawer } = useContext(DrawerContext);
   const { t } = useTranslation("translation");
-  // console.log("uploadImg", uploadImg);
 
   const onSubmit = (values, { resetForm }) => {
     addData({ ...values, id: nanoid() });
