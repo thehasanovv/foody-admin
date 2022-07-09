@@ -48,8 +48,17 @@ export const fetchProductData = () => {
         "https://foody-delivery-admin-default-rtdb.firebaseio.com/products.json"
       );
       const loadedData = Object.values(response.data.products);
-      dispatch(getProducts(loadedData));
+
+      // To get firebase id
+      const data = response.data.products;
+      let filteredData = [];
+      for (let x in data) {
+        filteredData.push({ ...data[x], firebaseId: x });
+      }
+      // console.log("filteredData", filteredData);
+      dispatch(getProducts(filteredData));
       dispatch(isLoading(false));
+      // console.log(filteredData);
     } catch (error) {
       dispatch(isLoading(false));
     }

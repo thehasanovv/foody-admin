@@ -14,6 +14,7 @@ const ProductCards = ({ datas }) => {
           price={data.price}
           restaurant={data.restaurant}
           img_url={data.img_url}
+          firebaseId={data.firebaseId}
         />
       ))}
     </CardsContainer>

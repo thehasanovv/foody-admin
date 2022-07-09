@@ -14,7 +14,6 @@ export default function Pagi({ data, comp, per_page }) {
     _DATA.jump(p);
   };
   const datas = _DATA.currentData();
-
   return (
     <>
       <PageControl comp={comp} datas={datas} />

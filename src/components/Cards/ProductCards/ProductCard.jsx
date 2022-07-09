@@ -14,7 +14,7 @@ import {
   CartBody,
 } from "./ProductCardStyle";
 
-const ProductCard = ({ name, price, restaurant, img_url, id }) => {
+const ProductCard = ({ name, price, restaurant, img_url, id, firebaseId }) => {
   const { setOpenDeleteModal, setDeleteProductModalID } =
     useContext(DrawerContext);
 

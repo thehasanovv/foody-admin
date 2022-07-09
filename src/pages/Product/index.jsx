@@ -13,6 +13,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 const Products = () => {
   const { products, loading } = useSelector((state) => state.product);
+  // console.log("products page", products);
   const { t } = useTranslation("translation");
   const dispatch = useDispatch();
 
