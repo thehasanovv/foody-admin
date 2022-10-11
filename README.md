@@ -1,6 +1,6 @@
 # Admin foody delivety
 
-To view a live example, [click here](https://foody-admin-9727kec9g-thehasanovv.vercel.app/panel/dashboard)
+To view a live example, [click here](https://foody-admin.vercel.app/panel/dashboard)
 
 <img src="/public/github/main.png">
 
